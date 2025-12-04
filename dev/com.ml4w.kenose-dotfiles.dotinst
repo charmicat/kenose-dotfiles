@@ -1,0 +1,14 @@
+{
+	"name": "Kenose DEV",
+	"id": "com.ml4w.kenose-dotfiles.dev",
+	"description": "Kenose ML4W Dotfiles for Hyprland",
+	"version":"0.1",
+	"author": "Luiza Utsch",
+	"homepage": "",
+	"dependencies": "",
+	"source": ".mydotfiles/com.ml4w.kenose-dotfiles",
+	"subfolder": "dotfiles",
+	"setupscript":"setup.sh",
+	"restore":[],
+	"settings":[]
+}

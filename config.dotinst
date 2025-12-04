@@ -130,7 +130,7 @@
             "file": ".config/ml4w/settings/terminal.sh",
             "checkpoint": "Check",
             "search": "",
-            "value": "kitty",
+            "value": "xfce4-terminal",
             "template": ""
         },
         {
@@ -144,6 +144,6 @@
             "template": ""
         }
     ],
-    "dotinst": "https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/hyprland-dotfiles-stable.dotinst",
+    "dotinst": "https://raw.githubusercontent.com/charmicat/kenose-dotfiles/refs/heads/main/config.dotinst",
     "type": "remote"
 }
