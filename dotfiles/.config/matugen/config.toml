@@ -1,4 +1,14 @@
 [config]
+# Dark fits Kenose better; you can tweak later.
+mode = "dark"
+
+# If you want custom metadata (fonts, whatever) available in templates:
+[config.custom_keywords]
+theme_name = "Kenose"
+
+# If you ever want extra manual colors:
+#[config.custom_colors]
+#blood = { color = "#8b0000", blend = false }
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'

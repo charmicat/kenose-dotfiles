@@ -51,17 +51,17 @@ if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
         echo
         ;;
     esac
-    if [ -d $HOME/.config/waybar/themes/ml4w-modern/light ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w-modern/light
+    if [ -d "$HOME"/.config/waybar/themes/ml4w-modern/light ]; then
+        rm -rf "$HOME"/.config/waybar/themes/ml4w-modern/light
     fi
-    if [ -d $HOME/.config/waybar/themes/ml4w-modern/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w-modern/dark
+    if [ -d "$HOME"/.config/waybar/themes/ml4w-modern/dark ]; then
+        rm -rf "$HOME"/.config/waybar/themes/ml4w-modern/dark
     fi
-    if [ -d $HOME/.config/waybar/themes/ml4w/light ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w/light
+    if [ -d "$HOME"/.config/waybar/themes/ml4w/light ]; then
+        rm -rf "$HOME"/.config/waybar/themes/ml4w/light
     fi
-    if [ -d $HOME/.config/waybar/themes/ml4w/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/ml4w/dark
+    if [ -d "$HOME"/.config/waybar/themes/ml4w/dark ]; then
+        rm -rf "$HOME"/.config/waybar/themes/ml4w/dark
     fi
 fi
 
@@ -100,7 +100,7 @@ if [ -f ~/.config/waybar/themes${arrThemes[1]}/style-custom.css ]; then
 fi
 
 # Check if waybar-disabled file exists
-if [ ! -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
+if [ ! -f "$HOME"/.config/ml4w/settings/waybar-disabled ]; then
     HYPRLAND_SIGNATURE=$(hyprctl instances -j | jq -r '.[0].instance')
     HYPRLAND_INSTANCE_SIGNATURE="$HYPRLAND_SIGNATURE" waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
     # env GTK_DEBUG=interactive waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &

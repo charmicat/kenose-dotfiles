@@ -1,0 +1,45 @@
+# uwsm users should avoid placing environment variables in the hyprland.conf file.
+# Instead, use ~/.config/uwsm/env for theming, xcursor, Nvidia and toolkit variables, 
+# and ~/.config/uwsm/env-hyprland for HYPR* and AQ_* variables.
+# The format is export KEY=VAL.
+
+# XDG Desktop Portal
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Hyprland
+
+# QT
+export QT_QPA_PLATFORM=wayland;xcb
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+# GTK
+export GDK_SCALE=1
+
+# Mozilla
+export MOZ_ENABLE_WAYLAND=1
+
+# Set the cursor size for xcursor
+export XCURSOR_SIZE=24
+
+# Disable appimage launcher by default
+export APPIMAGELAUNCHER_DISABLE=1
+
+# OZONE
+export OZONE_PLATFORM=wayland
+
+# For KVM virtual machines
+# export WLR_NO_HARDWARE_CURSORS= 1
+# export WLR_RENDERER_ALLOW_SOFTWARE= 1
+
+# NVIDIA https://wiki.hyprland.org/Nvidia/
+export LIBVA_DRIVER_NAME=nvidia
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __GL_VRR_ALLOWED=1
+export WLR_DRM_NO_ATOMIC=1
+
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export NVD_BACKEND=direct
+

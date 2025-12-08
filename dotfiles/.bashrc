@@ -29,8 +29,8 @@ fi
 
 source $XDG_CONFIG_HOME/bash/bash_aliases
 
-if [ -d $XDG_CONFIG_HOME/bash/functions.d ]; then
-        for rc in $XDG_CONFIG_HOME/bash/functions.d/*; do
+if [ -d "$XDG_CONFIG_HOME"/bash/functions.d ]; then
+        for rc in "$XDG_CONFIG_HOME"/bash/functions.d/*; do
                 if [ -f "$rc" ]; then
                         . "$rc"
                 fi
@@ -75,7 +75,8 @@ path_color="38;5;6m"
 separator_color="38;5;14m"
 #export PS1="\[$(tput bold)\]\[\033[38;5;5m\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 #\w shows $HOME as ~, $(pwd) as /home/<user>
-export PS1="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export PS1
 
 #eval `dircolors` # leave this to /etc/bash/bashrc
 
