@@ -14,32 +14,37 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-# GTK
+# GTK / Clutter
+export GDK_BACKEND=wayland
 export GDK_SCALE=1
+export CLUTTER_BACKEND=wayland
+
+# Cursor - Set the cursor size for xcursor
+export XCURSOR_SIZE=24
 
 # Mozilla
 export MOZ_ENABLE_WAYLAND=1
+export MOZ_DISABLE_RDD_SANDBOX=1
 
-# Set the cursor size for xcursor
-export XCURSOR_SIZE=24
-
-# Disable appimage launcher by default
+# AppImage - Disable appimage launcher by default
 export APPIMAGELAUNCHER_DISABLE=1
 
-# OZONE
+# Ozone / Electron
 export OZONE_PLATFORM=wayland
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export NIXOS_OZONE_WL=1
+export SDL_VIDEODRIVER=wayland
 
-# For KVM virtual machines
-# export WLR_NO_HARDWARE_CURSORS= 1
-# export WLR_RENDERER_ALLOW_SOFTWARE= 1
-
-# NVIDIA https://wiki.hyprland.org/Nvidia/
+# NVIDIA / GBM / VAAPI https://wiki.hyprland.org/Nvidia/
 export LIBVA_DRIVER_NAME=nvidia
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export __GL_VRR_ALLOWED=1
 export WLR_DRM_NO_ATOMIC=1
-
-export ELECTRON_OZONE_PLATFORM_HINT=auto
+export EGL_PLATFORM=wayland
 export NVD_BACKEND=direct
-
+export __GL_SYNC_TO_VBLANK=1
+export __GL_THREADED_OPTIMIZATIONS=1
+export __GL_YIELD=USLEEP
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __VK_LAYER_NV_optimus=NVIDIA_only
