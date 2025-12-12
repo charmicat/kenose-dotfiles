@@ -1,24 +1,25 @@
-# -----------------------------------------------------
-# INIT
-# -----------------------------------------------------
-
-# -----------------------------------------------------
-# Exports
-# -----------------------------------------------------
-export EDITOR=nvim
-export PATH="/usr/lib/ccache/bin/:$PATH"
-export PATH=$PATH:~/.cargo/bin/
-export PATH=$PATH:~/.local/bin/
-
-# -----------------------------------------------------
-# Luiza's bashrc additions
-# -----------------------------------------------------
+# /etc/skel/.bashrc
+#
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
 # that can't tolerate any output.  So make sure this doesn't display
 # anything or bad things will happen !
 
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
 #source /etc/profile #already loaded
+
+export EDITOR="/usr/bin/vim"
+
+# Put your fun stuff here.
+
 if test "x$XDG_CONFIG_HOME" = "x" ; then
   export XDG_CONFIG_HOME=$HOME/.config
 fi
@@ -26,11 +27,10 @@ if test "x$XDG_DATA_HOME" = "x" ; then
   export XDG_DATA_HOME=$HOME/.local/share
 fi
 
-# moved to 10-aliases
-# source $XDG_CONFIG_HOME/bash/bash_aliases
+source $XDG_CONFIG_HOME/bash/bash_aliases
 
-if [ -d "functions.d" ]; then
-        for rc in functions.d/*; do
+if [ -d "$XDG_CONFIG_HOME"/bashrc/functions.d ]; then
+        for rc in "$XDG_CONFIG_HOME"/bash/functions.d/*; do
                 if [ -f "$rc" ]; then
                         . "$rc"
                 fi
@@ -63,7 +63,7 @@ test -n "$GPG_TTY" || export GPG_TTY=/dev/tty
 
 export IFS_LB=$'\n'
 #export HISTFILE="$XDG_DATA_HOME/bash/bash_history"
-export HISTFILE="$XDG_DATA_HOME/bashrc/history" #something is overriding bash_history with history, forcing history then
+export HISTFILE="$XDG_DATA_HOME/bash/history" #something is overriding bash_history with history, forcing history then
 export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 
 #export PS1="\[\033[01;31m\]\h\[\033[01;34m\] \$(pwd) \$\[\033[00m\] "
@@ -75,20 +75,19 @@ path_color="38;5;6m"
 separator_color="38;5;14m"
 #export PS1="\[$(tput bold)\]\[\033[38;5;5m\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 #\w shows $HOME as ~, $(pwd) as /home/<user>
-export PS1="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export PS1
 
 #eval `dircolors` # leave this to /etc/bash/bashrc
 
 #export JDK_HOME="/opt/openjdk-jdk-current"
-# export JDK_HOME="$HOME/.gentoo/java-config-2/current-user-vm"
-# export JAVA_HOME=$JDK_HOME
-# export ANDROID_HOME="/home/talto/install/android-sdk-linux"
+export JDK_HOME="$HOME/.gentoo/java-config-2/current-user-vm"
+export JAVA_HOME=$JDK_HOME
+export ANDROID_HOME="/home/talto/install/android-sdk-linux"
 #export CLASSPATH=".:$JDK_HOME/lib/commons-cli-1.1.jar/:$JDK_HOME/lib/commons-net-1.4.1.jar:"
 
-export PATH="$PATH:$HOME/bin:/usr/games/bin:$HOME/.local/bin"
-# Gentoo stuff:
-# export PATH="$PATH:$HOME/install/android-sdk-linux/platform-tools/:$HOME/install/android-sdk-linux/tools:$HOME/install/Linux_Unreal_Engine_5.2.1/Engine/Binaries/Linux/"
-# export PATH="$PATH:$HOME/.local/share/solana/install/active_release/bin:$HOME/install/certbot-namecheap-hook:$HOME/install/VSCode-linux-x64/bin/"
+export PATH="$PATH:$HOME/bin:/usr/games/bin:$HOME/install/android-sdk-linux/platform-tools/:$HOME/install/android-sdk-linux/tools:$HOME/.local/bin:$HOME/install/Linux_Unreal_Engine_5.2.1/Engine/Binaries/Linux/:$HOME/.local/share/solana/install/active_release/bin:$HOME/install/certbot-namecheap-hook:$HOME/install/VSCode-linux-x64/bin/"
+
 #export PATH="$PATH:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/fastcomp/emscripten:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/node/12.9.1_64bit/bin" #minilogue stuff
 
 if test -z "${XDG_RUNTIME_DIR}"; then
