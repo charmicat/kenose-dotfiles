@@ -7,6 +7,9 @@
 
 # Hypr cursor size (Hyprland reads this; Xcursor size is global)
 export HYPRCURSOR_SIZE=24
+# export HYPRCURSOR_THEME=Bibata-Modern-Classic
+# export HYPRCURSOR_SIZE=16
+# export XCURSOR_THEME=Bibata-Modern-Classic
 
 # Nvidia / wlroots quirks that you only want on Hyprland
 export WLR_NO_HARDWARE_CURSORS=1
