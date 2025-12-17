@@ -66,32 +66,31 @@ export IFS_LB=$'\n'
 export HISTFILE="$XDG_DATA_HOME/bashrc/history" #something is overriding bash_history with history, forcing history then
 export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 
-#export PS1="\[\033[01;31m\]\h\[\033[01;34m\] \$(pwd) \$\[\033[00m\] "
-
 #PS1 created using https://bash-prompt-generator.org/, output: [20:14:47] hostname ~/bin $█
 # time_color="38;5;2m"
 time_color="38;5;202;1m"
-address_color="38;5;14m"
-path_color="38;5;6m"
-separator_color="38;5;14m"
-#export PS1="\[$(tput bold)\]\[\033[38;5;5m\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+address_color="38;5;208;1m"
+path_color="38;5;130;1m"
+separator_color="38;5;202;1m"
+# export PS1="\[$(tput bold)\]\[\033[38;5;5m\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 #\w shows $HOME as ~, $(pwd) as /home/<user>
-# export PS1="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
-export PS1='\[\e[38;5;202;1m\][\t]\[\e[0m\] \[\e[38;5;208;1m\]\h\[\e[0m\] \[\e[38;5;130;1m\]\w\[\e[0m\] \[\e[38;5;202;1m\]\$\[\e[0m\]'
+unset "$PS1"
+PROMPT="\[$(tput bold)\]\[\033[$time_color\][\t]\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$address_color\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$path_color\]\$(pwd)\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[$separator_color\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export PS1=$PROMPT
 
 #eval `dircolors` # leave this to /etc/bash/bashrc
 
-#export JDK_HOME="/opt/openjdk-jdk-current"
+# export JDK_HOME="/opt/openjdk-jdk-current"
 # export JDK_HOME="$HOME/.gentoo/java-config-2/current-user-vm"
 # export JAVA_HOME=$JDK_HOME
 # export ANDROID_HOME="/home/talto/install/android-sdk-linux"
-#export CLASSPATH=".:$JDK_HOME/lib/commons-cli-1.1.jar/:$JDK_HOME/lib/commons-net-1.4.1.jar:"
+# export CLASSPATH=".:$JDK_HOME/lib/commons-cli-1.1.jar/:$JDK_HOME/lib/commons-net-1.4.1.jar:"
 
 export PATH="$PATH:$HOME/bin:/usr/games/bin:$HOME/.local/bin"
 # Gentoo stuff:
 # export PATH="$PATH:$HOME/install/android-sdk-linux/platform-tools/:$HOME/install/android-sdk-linux/tools:$HOME/install/Linux_Unreal_Engine_5.2.1/Engine/Binaries/Linux/"
 # export PATH="$PATH:$HOME/.local/share/solana/install/active_release/bin:$HOME/install/certbot-namecheap-hook:$HOME/install/VSCode-linux-x64/bin/"
-#export PATH="$PATH:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/fastcomp/emscripten:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/node/12.9.1_64bit/bin" #minilogue stuff
+# export PATH="$PATH:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/fastcomp/emscripten:/home/talto/GoogleDrive/workspace/minilogue/logue-sdk/emsdk/node/12.9.1_64bit/bin" #minilogue stuff
 
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
@@ -107,46 +106,39 @@ if [ -f '/home/talto/install/google-cloud-sdk/path.bash.inc' ]; then . '/home/ta
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/talto/install/google-cloud-sdk/completion.bash.inc' ]; then . '/home/talto/install/google-cloud-sdk/completion.bash.inc'; fi
 
-
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/home/talto/.micromamba/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/home/talto/micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
+# export MAMBA_EXE='/home/talto/.micromamba/bin/micromamba';
+# export MAMBA_ROOT_PREFIX='/home/talto/micromamba';
+# __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__mamba_setup"
+# else
+#     alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+# fi
+# unset __mamba_setup
 # <<< mamba initialize <<<
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/talto/micromamba/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/talto/micromamba/etc/profile.d/conda.sh" ]; then
-        . "/home/talto/micromamba/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/talto/micromamba/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/home/talto/micromamba/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/talto/micromamba/etc/profile.d/conda.sh" ]; then
+#         . "/home/talto/micromamba/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/talto/micromamba/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 # needed for NVIDIA/games
-export __GL_SYNC_TO_VBLANK=1
-export __GL_THREADED_OPTIMIZATIONS=1
-export __GL_YIELD=USLEEP
-
-# moved to $XDG_CONFIG_HOME/bash/bash_functions, don't define functions here
-# genpasswd() {
-#	local l=$1
-#       	[ "$l" == "" ] && l=20
-#      	tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
-#}
+# moved to ~/.config/uwsm/env
+# export __GL_SYNC_TO_VBLANK=1
+# export __GL_THREADED_OPTIMIZATIONS=1
+# export __GL_YIELD=USLEEP
 
 export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=tds,u=testnet_write,p=c4fa841aa918bf8274e3e2a44d77568d9861b3ea"
 
@@ -160,13 +152,5 @@ source '/home/talto/.bash_completions/open-webui.sh'
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/talto/.lmstudio/bin"
-# End of LM Studio CLI section
 
 #eval $(keychain --quiet --agents ssh id_ed25519) ; . ~/.keychain/$HOSTNAME-sh
