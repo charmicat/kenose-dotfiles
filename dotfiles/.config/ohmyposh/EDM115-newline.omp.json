@@ -12,7 +12,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\n╭─",
@@ -21,7 +21,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "leading_diamond": "",
@@ -32,7 +32,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "󱐋",
@@ -43,7 +43,7 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ .Icon }}  ",
@@ -54,7 +54,7 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "style": "full"
           },
@@ -72,7 +72,7 @@
       "alignment": "right",
       "segments": [
         {
-          "properties": {
+          "options": {
             "branch_icon": "",
             "cache_duration": "none",
             "display_changing_color": true,
@@ -98,7 +98,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "display_mode": "files",
             "extensions": [
               "package-lock.json"
@@ -113,7 +113,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "display_mode": "files",
             "extensions": [
               "pnpm-lock.yaml"
@@ -128,7 +128,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "display_mode": "files"
           },
           "leading_diamond": "",
@@ -164,7 +164,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "always_enabled": true,
             "cache_duration": "none"
           },
