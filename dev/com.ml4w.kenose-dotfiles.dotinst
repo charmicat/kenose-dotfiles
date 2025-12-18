@@ -14,7 +14,7 @@
             "title": "ML4W Settings",
             "source": ".config/ml4w/settings",
             "value": true
-        },
+        }, 
         {
             "title": "ML4W Settings",
             "source": ".config/com.ml4w.hyprlandsettings/hyprctl.json",
