@@ -2,7 +2,7 @@
     "name": "Kenose DEV",
     "id": "com.ml4w.kenose-dotfiles.dev",
     "description": "Kenose ML4W Dotfiles for Hyprland",
-    "version": "0.1",
+    "version": "1.0",
     "author": "Luiza Utsch",
     "homepage": "https://github.com/charmicat/kenose-dotfiles",
     "dependencies": "nwg-dock-hyprland, com.ml4w.sidebar and com.ml4w.settings (from flatpak)",
@@ -14,7 +14,7 @@
             "title": "ML4W Settings",
             "source": ".config/ml4w/settings",
             "value": true
-        },
+        }, 
         {
             "title": "ML4W Settings",
             "source": ".config/com.ml4w.hyprlandsettings/hyprctl.json",
