@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="ML4W Modern Default"
+theme_name="Kenose Default"

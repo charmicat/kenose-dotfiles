@@ -2,15 +2,14 @@
 
 # Get script folder
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+echo ":: Script Directory: $SCRIPT_DIR"
 
 # --- Script Initialization and Argument Handling ---
-
+DRY_RUN_FLAG=""
 # Check if the first parameter is -n or --dry-run
 if [[ "$1" == "-n" || "$1" == "--dry-run" ]]; then
     DRY_RUN_FLAG="-n"
     echo ":: DRY RUN MODE ACTIVE"
-else
-    DRY_RUN_FLAG=""
 fi
 
 # Find the first file ending with .dotinst in the current directory
@@ -26,7 +25,20 @@ fi
 # --- Configuration Reading (Assumes 'jq' is available) ---
 
 # Read .dotinst file
-project_name=$(jq -r '.name' "$SCRIPT_DIR/$FIRST_FILE")
+project_json="$SCRIPT_DIR/$FIRST_FILE"
+
+# Ensure the .dotinst file is valid JSON for jq
+if ! jq -e . "$project_json" >/dev/null 2>&1; then
+    echo "Error: '$FIRST_FILE' is not valid JSON; jq failed to parse it (check for trailing commas or comments)."
+    exit 1
+fi
+
+project_name=$(jq -r '.name // empty' "$project_json")
+if [ -z "$project_name" ]; then
+    echo "Error: 'name' not found or empty in $FIRST_FILE"
+    exit 1
+fi
+echo ":: Project Name: $project_name"
 project_id=$(jq -r '.id' "$SCRIPT_DIR/$FIRST_FILE")
 project_source=$(jq -r '.source' "$SCRIPT_DIR/$FIRST_FILE")
 project_subfolder=$(jq -r '.subfolder' "$SCRIPT_DIR/$FIRST_FILE")
@@ -52,7 +64,7 @@ echo ":: Starting Folder Sync Daemon for $project_name"
 while true; do
     echo ":: Waiting for changes in $SOURCE_DIR..."
     
-    # Wait for file system events
+    # Wait for file system events vcccccccccccccccccccccccccccccm
     inotifywait -r -e "$EVENTS" --quiet "$SOURCE_DIR"
     
     # Debounce period

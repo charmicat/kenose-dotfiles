@@ -21,7 +21,7 @@
         "wlr/taskbar",
         "group/quicklinks",
         "custom/nowplaying",
-        "custom/waybarthemes"    
+        "custom/waybarthemes",
         "custom/empty"
     ],
     "modules-center": [

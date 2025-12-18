@@ -1,2 +1,2 @@
 #!/bin/bash
-theme_name="ML4W Modern Black"
+theme_name="Kenose Black"
