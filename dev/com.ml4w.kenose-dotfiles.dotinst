@@ -1,14 +1,14 @@
 {
-    "name": "Kenose DEV",
+    "name": "Kenose ML4W Dotfiles for Hyprland - DEV",
     "id": "com.ml4w.kenose-dotfiles.dev",
     "description": "Kenose ML4W Dotfiles for Hyprland",
-    "version": "0.1",
+    "version": "1.0.0.0",
     "author": "Luiza Utsch",
     "homepage": "https://github.com/charmicat/kenose-dotfiles",
     "dependencies": "nwg-dock-hyprland, com.ml4w.sidebar and com.ml4w.settings (from flatpak)",
     "source": ".mydotfiles/com.ml4w.kenose-dotfiles",
     "subfolder": "dotfiles",
-    "setupscript": "setup.sh",
+    "setupscript": "setup/setup.sh",
     "restore": [
         {
             "title": "ML4W Settings",
@@ -145,6 +145,16 @@
             "checkpoint": "Check",
             "search": "",
             "value": "firefox",
+            "template": ""
+        },
+        {
+            "type": "text",
+            "mode": "overwritefile",
+            "title": "Default Text Editor",
+            "file": ".config/ml4w/settings/editor.sh",
+            "checkpoint": "Check",
+            "search": "",
+            "value": "nvim",
             "template": ""
         }
     ]

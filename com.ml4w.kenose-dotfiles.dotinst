@@ -1,8 +1,8 @@
 {
     "name": "Kenose ML4W Dotfiles for Hyprland",
     "id": "com.ml4w.kenose-dotfiles",
-    "description": "Advanced configuration for the dynamic tiling window manager Hyprland",
-    "version": "0.0.0.1",
+    "description": "Kenose ML4W Dotfiles for Hyprland",
+    "version": "1.0.0.0",
     "author": "Luiza Utsch",
     "homepage": "https://github.com/charmicat/kenose-dotfiles",
     "dependencies": "https://github.com/charmicat/kenose-dotfiles/getting-started/dependencies",
@@ -142,8 +142,18 @@
             "search": "",
             "value": "firefox",
             "template": ""
+        },
+                {
+            "type": "text",
+            "mode": "overwritefile",
+            "title": "Default Text Editor",
+            "file": ".config/ml4w/settings/editor.sh",
+            "checkpoint": "Check",
+            "search": "",
+            "value": "nvim",
+            "template": ""
         }
     ],
-    "dotinst": "https://raw.githubusercontent.com/charmicat/kenose-dotfiles/refs/heads/main/config.dotinst",
+    "dotinst": "https://raw.githubusercontent.com/charmicat/kenose-dotfiles/refs/heads/main/com.ml4w.kenose-dotfiles.dotinst",
     "type": "remote"
 }
