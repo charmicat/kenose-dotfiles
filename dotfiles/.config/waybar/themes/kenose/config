@@ -21,7 +21,7 @@
         "wlr/taskbar",
         "group/quicklinks",
         "custom/nowplaying",
-        "custom/waybarthemes",
+
         "custom/empty"
     ],
     "modules-center": [
@@ -41,6 +41,7 @@
         "custom/notification",
         "custom/exit",
         "custom/ml4w-welcome",
+        "custom/waybarthemes",
         "clock"
     ]
 }

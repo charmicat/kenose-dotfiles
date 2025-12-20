@@ -1,9 +1,9 @@
 # /etc/skel/.bash_profile
 
-_confdir=${XDG_CONFIG_HOME:-$HOME/.config}/bash
+# _confdir=${XDG_CONFIG_HOME:-$HOME/.config}/bash
 
 # This file is sourced by bash for login shells.  The following line
 # runs your .bashrc and is recommended by the bash info pages.
-if [[ -f $_confdir/bashrc ]] ; then
-	. $_confdir/bashrc
-fi
+# if [[ -f $_confdir/bashrc ]] ; then
+# 	. $_confdir/bashrc
+# fi

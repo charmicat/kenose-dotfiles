@@ -12,7 +12,7 @@ alias checkUUID="for i in $( grep UUID /etc/fstab ); do for j in $(echo $i | cut
 #alias steam_vulkan='VK_ICD_FILENAMES=/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json /usr/bin/steam'
 #alias uengine_vulkan='VK_ICD_FILENAMES=/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json uengine'
 alias overgrive_py='python3 /opt/thefanclub/overgrive/overgrive'
-alias setdatevar="export DATE=`date +%g%m%d_%H%M%S`"
+alias setdatevar="export DATE=$(date +%g%m%d_%H%M%S)"
 alias check_inodes="find . -xdev -type f | cut -d \"/\" -f 2 | sort | uniq -c | sort -n"
 alias myIP="curl http://ifconfig.me/ip; echo"
 alias nosleep="nosleep_widget.sh"

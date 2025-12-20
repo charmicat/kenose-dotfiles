@@ -1,1 +1,1 @@
-leafpad
+nvim-qt

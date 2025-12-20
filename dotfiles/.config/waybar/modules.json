@@ -20,7 +20,7 @@
       "default": ""
     },
     "persistent-workspaces": {
-            "*": 6
+      "*": 6
     }
   },
   // Taskbar
@@ -218,7 +218,7 @@
   },
   // Clock
   "clock": {
-        "format": "{:%H:%M - %a %Od.%Om.%y}",
+    "format": "{:%H:%M - %a %Od.%Om.%y}",
     "on-click": "flatpak run com.ml4w.calendar",
     "timezone": "",
     "tooltip": false
@@ -381,6 +381,9 @@
     "format-off": "",
     "interval": 30,
     "on-click": "sleep 0.1 && ~/.config/ml4w/settings/bluetooth.sh",
+    "tooltip-format-connected": "Connected devices: {num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t| Battery life: {device_battery_percentage}%",
     "format-no-controller": ""
   },
   // Other

@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# Random zoomy 16:9 crop for ML4W / Hyprland wallpapers
+# Uses $wallpaper as input and writes to $used_wallpaper
+
+# Desired aspect ratio (still HD-ish)
+ASPECT_W=${ASPECT_W:-16}
+ASPECT_H=${ASPECT_H:-9}
+
+# Zoom tiers (percent of original width)
+# You can override these via env if you want
+WIDE_MIN=${WIDE_MIN:-50}
+WIDE_MAX=${WIDE_MAX:-95}
+
+MED_MIN=${MED_MIN:-30}
+MED_MAX=${MED_MAX:-50}
+
+TIGHT_MIN=${TIGHT_MIN:-15}
+TIGHT_MAX=${TIGHT_MAX:-30}
+
+# Probabilities for each zoom tier (must sum to 100)
+P_WIDE=${P_WIDE:-80}
+P_MED=${P_MED:-15}
+P_TIGHT=${P_TIGHT:-5}
+
+# Get original dimensions
+read WIDTH HEIGHT < <(magick identify -format "%w %h" "$wallpaper")
+
+# Pick zoom tier based on weighted random
+roll=$(( RANDOM % 100 ))
+
+if [ "$roll" -lt "$P_TIGHT" ]; then
+    MIN_PCT=$TIGHT_MIN
+    MAX_PCT=$TIGHT_MAX
+elif [ "$roll" -lt $(( P_TIGHT + P_MED )) ]; then
+    MIN_PCT=$MED_MIN
+    MAX_PCT=$MED_MAX
+else
+    MIN_PCT=$WIDE_MIN
+    MAX_PCT=$WIDE_MAX
+fi
+
+# Safety: clamp percentages
+if [ "$MIN_PCT" -lt 1 ]; then MIN_PCT=1; fi
+if [ "$MAX_PCT" -gt 100 ]; then MAX_PCT=100; fi
+if [ "$MAX_PCT" -lt "$MIN_PCT" ]; then MAX_PCT="$MIN_PCT"; fi
+
+# Pick a random percentage width between MIN_PCT and MAX_PCT
+range=$(( MAX_PCT - MIN_PCT + 1 ))
+rand_pct=$(( RANDOM % range + MIN_PCT ))
+
+# Start with width-based crop
+crop_w=$(( WIDTH * rand_pct / 100 ))
+crop_h=$(( crop_w * ASPECT_H / ASPECT_W ))
+
+# If that height doesn't fit, fall back to height-based crop
+if [ "$crop_h" -gt "$HEIGHT" ]; then
+    crop_h=$HEIGHT
+    crop_w=$(( HEIGHT * ASPECT_W / ASPECT_H ))
+fi
+
+# Guard against degenerate values
+[ "$crop_w" -lt 1 ] && crop_w=1
+[ "$crop_h" -lt 1 ] && crop_h=1
+
+# Compute max offsets
+max_x=$(( WIDTH  - crop_w ))
+max_y=$(( HEIGHT - crop_h ))
+
+[ "$max_x" -lt 0 ] && max_x=0
+[ "$max_y" -lt 0 ] && max_y=0
+
+if [ "$max_x" -gt 0 ]; then
+    offset_x=$(( RANDOM % (max_x + 1) ))
+else
+    offset_x=0
+fi
+
+if [ "$max_y" -gt 0 ]; then
+    offset_y=$(( RANDOM % (max_y + 1) ))
+else
+    offset_y=0
+fi
+
+# Do the random crop; Hyprpaper/ML4W will scale as needed
+magick "$wallpaper" \
+  -crop "${crop_w}x${crop_h}+${offset_x}+${offset_y}" +repage \
+  "$used_wallpaper"

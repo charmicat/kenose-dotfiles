@@ -18,7 +18,7 @@
             "file": ".config/hypr/conf/keyboard.conf",
             "checkpoint": "Check",
             "search": "kb_layout",
-            "value": "us",
+            "value": "gb",
             "template": "    kb_layout = [VALUE]"
         },
         {

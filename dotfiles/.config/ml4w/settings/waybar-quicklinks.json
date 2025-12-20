@@ -14,6 +14,21 @@ You can reload waybar with SUPER + SHIFT + B
         "on-click": "~/.config/ml4w/settings/filemanager.sh",
         "tooltip-format": "Open Filemanager"
     },
+    "custom/quicklink_email": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/email.sh",
+        "tooltip-format": "Open Email Client"
+    },
+    "custom/quicklink_chromium": {
+        "format": "",
+        "on-click": "chromium",
+        "tooltip-format": "Open Chromium"
+    },
+    "custom/quicklink_edge": {
+        "format": "",
+        "on-click": "edge",
+        "tooltip-format": "Open Edge"
+    },
     "custom/quicklink_firefox": {
         "format": "",
         "on-click": "firefox",
