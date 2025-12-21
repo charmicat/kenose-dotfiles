@@ -1,1 +1,1 @@
-kitty
+xfce4-terminal
