@@ -1,7 +1,7 @@
 /* -----------------------------------------------------
  * Import Matugen Colors
  * ----------------------------------------------------- */
-@import '../../../../../.config/waybar/colors.css';
+@import '/home/talto/.config/waybar/colors.css';
 
 @define-color on_surface @on_secondary;
 @define-color icon_color @secondary;

@@ -1,6 +1,6 @@
 /* -----------------------------------------------------
  * Import Matugen Colors
  * ----------------------------------------------------- */
-@import '../../../../../.config/waybar/colors.css';
+@import '/home/talto/.config/waybar/colors.css';
 
 @import '../style.css';
