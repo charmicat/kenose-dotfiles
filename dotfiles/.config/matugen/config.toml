@@ -6,10 +6,6 @@ mode = "dark"
 [config.custom_keywords]
 theme_name = "Kenose"
 
-# If you ever want extra manual colors:
-#[config.custom_colors]
-#blood = { color = "#8b0000", blend = false }
-
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/matugen.theme'
@@ -49,8 +45,8 @@ output_path = '~/.config/gtk-4.0/colors.css'
 
 [templates.i3]
 input_path = '~/.config/matugen/templates/sway-colors.conf'
-output_path = '~/.config/i3/colors.conf'
-post_hook = 'i3msg reload'
+output_path = '~/.config/i3/conf.d/01-colors.conf'
+post_hook = 'i3-msg reload'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
@@ -74,7 +70,7 @@ output_path = '~/.config/swaync/colors.css'
 
 [templates.sway]
 input_path = '~/.config/matugen/templates/sway-colors.conf'
-output_path = '~/.config/sway/colors.conf'
+output_path = '~/.config/sway/conf.d/01-colors.conf'
 post_hook = 'swaymsg reload'
 
 [templates.walker]
