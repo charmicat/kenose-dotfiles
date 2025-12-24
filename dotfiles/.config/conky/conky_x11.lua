@@ -1,4 +1,6 @@
 conky.config = {
+
+	append_file = "~/.config/conky/colors.lua",
 -- set to yes if you want Conky to be forked in the background
 	background = true,
        out_to_x = true,
