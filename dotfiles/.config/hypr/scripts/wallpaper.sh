@@ -6,7 +6,18 @@
 #                /_/       /_/             
 
 # Source library.sh
-source $HOME/.config/ml4w/library.sh
+source "$HOME"/.config/ml4w/library.sh
+
+# -----------------------------------------------------
+# Detect session type
+# -----------------------------------------------------
+WAYPAPER_BACKEND=""
+IS_X11_SESSION=$(echo "$XDG_SESSION_TYPE" | grep -i "x11")
+if [ "$IS_X11_SESSION" -eq 0 ]; then
+    _writeLog "X11 session detected"
+    IS_X11_SESSION=1
+    WAYPAPER_BACKEND="--backend feh"
+fi
 
 # -----------------------------------------------------
 # Check to use wallpaper cache
@@ -25,8 +36,8 @@ fi
 # -----------------------------------------------------
 ml4w_cache_folder="$HOME/.cache/ml4w/hyprland-dotfiles"
 
-if [ ! -d $ml4w_cache_folder ]; then
-    mkdir -p $ml4w_cache_folder
+if [ ! -d "$ml4w_cache_folder" ]; then
+    mkdir -p "$ml4w_cache_folder"
 fi
 
 # -----------------------------------------------------
@@ -63,8 +74,8 @@ blur=$(cat $blurfile)
 # -----------------------------------------------------
 
 if [ -z $1 ]; then
-    if [ -f $cachefile ]; then
-        wallpaper=$(cat $cachefile)
+    if [ -f "$cachefile" ]; then
+        wallpaper=$(cat "$cachefile")
     else
         wallpaper=$defaultwallpaper
     fi
@@ -79,25 +90,25 @@ tmpwallpaper=$wallpaper
 # Copy path of current wallpaper to cache file
 # -----------------------------------------------------
 
-if [ ! -f $cachefile ]; then
-    touch $cachefile
+if [ ! -f "$cachefile" ]; then
+    touch "$cachefile"
 fi
-echo "$wallpaper" > $cachefile
+echo "$wallpaper" > "$cachefile"
 _writeLog "Path of current wallpaper copied to $cachefile"
 
 # -----------------------------------------------------
 # Get wallpaper filename
 # -----------------------------------------------------
 
-wallpaperfilename=$(basename $wallpaper)
+wallpaperfilename=$(basename "$wallpaper")
 _writeLog "Wallpaper Filename: $wallpaperfilename"
 
 # -----------------------------------------------------
 # Wallpaper Effects
 # -----------------------------------------------------
 
-if [ -f $wallpapereffect ]; then
-    effect=$(cat $wallpapereffect)
+if [ -f "$wallpapereffect" ]; then
+    effect=$(cat "$wallpapereffect")
     if [ ! "$effect" == "off" ]; then
         used_wallpaper=$generatedversions/$effect-$wallpaperfilename
         if [ -f $generatedversions/$effect-$wallpaperfilename ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
@@ -105,12 +116,14 @@ if [ -f $wallpapereffect ]; then
         else
             _writeLog "Generate new cached wallpaper $effect-$wallpaperfilename with effect $effect"
             notify-send --replace-id=1 "Using wallpaper effect $effect..." "with image $wallpaperfilename" -h int:value:33
-            source $HOME/.config/hypr/effects/wallpaper/$effect
+            source "$HOME"/.config/hypr/effects/wallpaper/$effect
         fi
         _writeLog "Loading wallpaper $generatedversions/$effect-$wallpaperfilename with effect $effect"
         _writeLog "Setting wallpaper with $used_wallpaper"
-        touch $waypaperrunning
-        waypaper --wallpaper $used_wallpaper
+        touch "$waypaperrunning"
+        # waypaper --wallpaper "$used_wallpaper"
+
+        waypaper "$WAYPAPER_BACKEND" --wallpaper "$used_wallpaper"
     else
         _writeLog "Wallpaper effect is set to off"
     fi
@@ -131,23 +144,35 @@ THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | aw
 
 _writeLog "Execute matugen with $used_wallpaper"
 if [ "$THEME_PREF" -eq 1 ]; then
-    $HOME/.local/bin/matugen image $used_wallpaper -m "dark"
+    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
 else
-    $HOME/.local/bin/matugen image $used_wallpaper -m "light"
+    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
 fi
 
-# -----------------------------------------------------
-# Reload Waybar
-# -----------------------------------------------------
+if [ "$IS_X11_SESSION" -eq 1 ]; then
+    i3-msg reload;
+    notify-send "WTF" "X11 Session detected, reloading i3 config"
+else
+    # -----------------------------------------------------
+    # Reload Waybar
+    # -----------------------------------------------------
+notify-send "WTF" "Wayland Session detected, reloading i3 config"
+    sleep 1
+    "$HOME"/.config/waybar/launch.sh
 
-sleep 1
-$HOME/.config/waybar/launch.sh
+    # -----------------------------------------------------
+    # Reload nwg-dock-hyprland
+    # -----------------------------------------------------
 
-# -----------------------------------------------------
-# Reload nwg-dock-hyprland
-# -----------------------------------------------------
+    "$HOME"/.config/nwg-dock-hyprland/launch.sh &
 
-$HOME/.config/nwg-dock-hyprland/launch.sh &
+    # -----------------------------------------------------
+    # Update SwayNC
+    # -----------------------------------------------------
+
+    sleep 0.1
+    swaync-client -rs
+fi
 
 # -----------------------------------------------------
 # Update Pywalfox
@@ -158,13 +183,6 @@ if type pywalfox >/dev/null 2>&1; then
 fi
 
 # -----------------------------------------------------
-# Update SwayNC
-# -----------------------------------------------------
-
-sleep 0.1
-swaync-client -rs
-
-# -----------------------------------------------------
 # Created blurred wallpaper
 # -----------------------------------------------------
 
@@ -173,7 +191,7 @@ if [ -f $generatedversions/blur-$blur-$effect-$wallpaperfilename.png ] && [ "$fo
 else
     _writeLog "Generate new cached wallpaper blur-$blur-$effect-$wallpaperfilename with blur $blur"
     # notify-send --replace-id=1 "Generate new blurred version" "with blur $blur" -h int:value:66
-    magick $used_wallpaper -resize 75% $blurredwallpaper
+    magick "$used_wallpaper" -resize 75% $blurredwallpaper
     _writeLog "Resized to 75%"
     if [ ! "$blur" == "0x0" ]; then
         magick $blurredwallpaper -blur $blur $blurredwallpaper

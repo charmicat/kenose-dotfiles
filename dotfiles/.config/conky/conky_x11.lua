@@ -1,6 +1,21 @@
-conky.config = {
 
-	append_file = "~/.config/conky/colors.lua",
+function merge(a, b)
+    if type(a) == 'table' and type(b) == 'table'
+    then
+	for k,v in pairs(b)
+	do
+		if type(v)=='table' and type(a[k] or false)=='table'
+		then
+			merge(a[k],v)
+		else
+			a[k]=v
+		end
+	end
+    end
+    return a
+end
+
+config = {
 -- set to yes if you want Conky to be forked in the background
 	background = true,
        out_to_x = true,
@@ -96,7 +111,6 @@ xinerama_head = 0,
 -- Color scheme 
 --	color1 = 'lightgray'
 	color1 = '#D3D3D3',--lightgray
-
 --	color2 = 'orange',
 	color2 = '#f59342',
 --    color3 = 'gray',
@@ -114,6 +128,11 @@ xinerama_head = 0,
 
 -- variable is given either in format $variable or in ${variable}
 };
+
+conf_dir = os.getenv("HOME") .. '/.config/conky/';
+
+dofile(conf_dir .. "colors.lua");
+conky.config = merge( config, local_config );
 
 conky.text = [[
 
@@ -163,4 +182,3 @@ S.M.A.R.T. errors:
 ${color1}${tail /var/tmp/smartctl_out.txt 10 1440}${color}
 
 ]];
-
