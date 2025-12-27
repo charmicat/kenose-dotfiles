@@ -8,6 +8,9 @@
 # Source library.sh
 source "$HOME"/.config/ml4w/library.sh
 
+ notify-send "WTF" "X11 Session detected, reloading i3 config"
+ echo "X11 Session detected, reloading i3 config"
+
 # -----------------------------------------------------
 # Detect session type
 # -----------------------------------------------------
