@@ -89,7 +89,8 @@ _writeHeader "Fedora"
 # Copr
 # --------------------------------------------------------------
 
-sudo dnf copr enable --assumeyes solopasha/hyprland
+sudo dnf copr remove --assumeyes solopasha/hyprland
+sudo dnf copr enable --assumeyes sdegler/hyprland
 sudo dnf copr enable --assumeyes peterwu/rendezvous
 sudo dnf copr enable --assumeyes wef/cliphist
 sudo dnf copr enable --assumeyes tofik/nwg-shell
@@ -206,6 +207,12 @@ source $SCRIPT_DIR/_fonts.sh
 # --------------------------------------------------------------
 
 source $SCRIPT_DIR/_icons.sh
+
+# --------------------------------------------------------------
+# Create XDG Directories
+# --------------------------------------------------------------
+
+xdg-user-dirs-update
 
 # --------------------------------------------------------------
 # Finish
