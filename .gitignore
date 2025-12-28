@@ -10,8 +10,6 @@
 *.log.*
 *.sig
 
-pkg/
-src/
 .git/
 
 ml4w copy/
