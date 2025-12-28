@@ -64,7 +64,7 @@ echo ":: Starting Folder Sync Daemon for $project_name"
 while true; do
     echo ":: Waiting for changes in $SOURCE_DIR..."
     
-    # Wait for file system events vcccccccccccccccccccccccccccccm
+    # Wait for file system events
     inotifywait -r -e "$EVENTS" --quiet "$SOURCE_DIR"
     
     # Debounce period

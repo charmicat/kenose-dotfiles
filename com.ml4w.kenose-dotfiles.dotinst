@@ -5,7 +5,7 @@
     "version": "1.0.0.0",
     "author": "Luiza Utsch",
     "homepage": "https://github.com/charmicat/kenose-dotfiles",
-    "dependencies": "https://github.com/charmicat/kenose-dotfiles/getting-started/dependencies",
+    "dependencies": "https://mylinuxforwork.github.io/dotfiles/getting-started/dependencies",
     "source": "https://github.com/charmicat/kenose-dotfiles.git",
     "tag": "0.0.0.1",
     "subfolder": "dotfiles",
@@ -110,7 +110,7 @@
             "file": ".config/hypr/conf/keyboard.conf",
             "checkpoint": "Check",
             "search": "kb_variant",
-            "value": "",
+            "value": "intl",
             "template": "    kb_variant = [VALUE]"
         },
         {
