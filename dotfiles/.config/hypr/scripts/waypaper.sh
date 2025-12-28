@@ -16,11 +16,13 @@ echo "$@"
 echo "================================"
 if [ -f /usr/bin/waypaper ]; then
     _writeLog ":: Launching waypaper in /usr/bin"
-    waypaper $@ &
+    # waypaper $@ &
+    waypaper $@ 
     touch "$waypaperrunning"
 elif [ -f "$HOME"/.local/bin/waypaper ]; then
     _writeLog ":: Launching waypaper in $HOME/.local/bin"
-    "$HOME"/.local/bin/waypaper $@ &
+    # "$HOME"/.local/bin/waypaper $@ &
+    "$HOME"/.local/bin/waypaper $@ 
     touch "$waypaperrunning"
 else
     _writeLog ":: waypaper not found"
