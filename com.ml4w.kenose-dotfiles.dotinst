@@ -12,11 +12,6 @@
     "setupscript": "setup/setup.sh",
     "restore": [
         {
-            "title": "ML4W Settings",
-            "source": ".config/ml4w/settings",
-            "value": true
-        },
-        {
             "title": "Keyboard",
             "source": ".config/hypr/conf/keyboard.conf",
             "value": true
@@ -24,11 +19,6 @@
         {
             "title": "Monitor",
             "source": ".config/hypr/conf/monitor.conf",
-            "value": true
-        },
-        {
-            "title": "Waypaper",
-            "source": ".config/waypaper",
             "value": true
         },
         {
@@ -76,6 +66,16 @@
             "source": ".config/hypr/conf/custom.conf",
             "value": true
         },
+		{
+			"title": "ML4W Settings",
+			"source": ".config/ml4w/settings",
+			"value": true
+		},
+		{
+			"title": "Waypaper",
+			"source": ".config/waypaper",
+			"value": true
+		},
         {
             "title": "GTK 3",
             "source": ".config/gtk-3.0",
@@ -90,6 +90,176 @@
             "title": "GTK 2",
             "source": ".gtkrc-2.0",
             "value": true
+		},
+		7777777
+		{
+			"title": "bashrc",
+			"source": ".config/bashrc",
+			"value": true
+		},
+		{
+			"title": "com.ml4w.hyprlandsettings",
+			"source": ".config/com.ml4w.hyprlandsettings",
+			"value": true
+		},
+		{
+			"title": "conky",
+			"source": ".config/conky",
+			"value": true
+		},
+		{
+			"title": "dunst",
+			"source": ".config/dunst",
+			"value": true
+		},
+		{
+			"title": "fastfetch",
+			"source": ".config/fastfetch",
+			"value": true
+		},
+		{
+			"title": "fish",
+			"source": ".config/fish",
+			"value": true
+		},
+		{
+			"title": "gtk-3.0",
+			"source": ".config/gtk-3.0",
+			"value": true
+		},
+		{
+			"title": "gtk-4.0",
+			"source": ".config/gtk-4.0",
+			"value": true
+		},
+		{
+			"title": "hypr",
+			"source": ".config/hypr",
+			"value": true
+		},
+		{
+			"title": "hyprland-autoname-workspaces",
+			"source": ".config/hyprland-autoname-workspaces",
+			"value": true
+		},
+		{
+			"title": "i3",
+			"source": ".config/i3",
+			"value": true
+		},
+		{
+			"title": "i3status",
+			"source": ".config/i3status",
+			"value": true
+		},
+		{
+			"title": "kitty",
+			"source": ".config/kitty",
+			"value": true
+		},
+		{
+			"title": "matugen",
+			"source": ".config/matugen",
+			"value": true
+		},
+		{
+			"title": "ml4w",
+			"source": ".config/ml4w",
+			"value": true
+		},
+		{
+			"title": "nvim",
+			"source": ".config/nvim",
+			"value": true
+		},
+		{
+			"title": "nwg-dock-hyprland",
+			"source": ".config/nwg-dock-hyprland",
+			"value": true
+		},
+		{
+			"title": "ohmyposh",
+			"source": ".config/ohmyposh",
+			"value": true
+		},
+		{
+			"title": "qt5ct",
+			"source": ".config/qt5ct",
+			"value": true
+		},
+		{
+			"title": "qt6ct",
+			"source": ".config/qt6ct",
+			"value": true
+		},
+		{
+			"title": "rofi",
+			"source": ".config/rofi",
+			"value": true
+		},
+		{
+			"title": "sidepad",
+			"source": ".config/sidepad",
+			"value": true
+		},
+		{
+			"title": "sway",
+			"source": ".config/sway",
+			"value": true
+		},
+		{
+			"title": "swaync",
+			"source": ".config/swaync",
+			"value": true
+		},
+		{
+			"title": "uwsm",
+			"source": ".config/uwsm",
+			"value": true
+		},
+		{
+			"title": "vim",
+			"source": ".config/vim",
+			"value": true
+		},
+		{
+			"title": "walker",
+			"source": ".config/walker",
+			"value": true
+		},
+		{
+			"title": "waybar",
+			"source": ".config/waybar",
+			"value": true
+		},
+		{
+			"title": "waypaper",
+			"source": ".config/waypaper",
+			"value": true
+		},
+		{
+			"title": "wlogout",
+			"source": ".config/wlogout",
+			"value": true
+		},
+		{
+			"title": "xsettingsd",
+			"source": ".config/xsettingsd",
+			"value": true
+		},
+		{
+			"title": "zshrc",
+			"source": ".config/zshrc",
+			"value": true
+		},
+		{
+			"title": "chromium-flags.conf",
+			"source": ".config/chromium-flags.conf",
+			"value": true
+		},
+		{
+			"type": "file",
+			"name": "edge-flags.conf"
         }
     ],
     "settings": [
@@ -112,16 +282,6 @@
             "search": "kb_variant",
             "value": "intl",
             "template": "    kb_variant = [VALUE]"
-        },
-        {
-            "type": "text",
-            "mode": "replacesingleline",
-            "title": "Screen Resolution",
-            "file": ".config/hypr/conf/monitors/default.conf",
-            "checkpoint": "Check",
-            "search": "monitor=,preferred,",
-            "value": "preferred",
-            "template": "monitor=,[VALUE],auto,1"
         },
         {
             "type": "text",

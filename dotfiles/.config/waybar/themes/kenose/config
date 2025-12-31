@@ -12,7 +12,8 @@
     "margin-right": 0,
     "include": [
         "~/.config/ml4w/settings/waybar-quicklinks.json",
-        "~/.config/waybar/modules.json"
+        "~/.config/waybar/modules.json",
+        "~/.config/waybar/themes/kenose/modules.json"
     ],
     // Choose the order of the modules
     "modules-left": [
@@ -21,7 +22,6 @@
         "wlr/taskbar",
         "group/quicklinks",
         "custom/nowplaying",
-
         "custom/empty"
     ],
     "modules-center": [
@@ -34,14 +34,17 @@
         // "backlight",
         "bluetooth",
         "network",
-        "battery",
+        // "battery",
         "group/hardware",
         "group/tools",
+        // "group/links",
+        "group/settings",
+        "custom/empty",
         "tray",
         "custom/notification",
-        "custom/exit",
         "custom/ml4w-welcome",
-        "custom/waybarthemes",
+        // "custom/waybarthemes",
+        "custom/exit",
         "clock"
     ]
 }

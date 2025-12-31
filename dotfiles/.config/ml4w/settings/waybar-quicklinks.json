@@ -49,23 +49,26 @@ You can reload waybar with SUPER + SHIFT + B
         "on-click": "pamac-manager",
         "tooltip-format": "Pamac manager"
     },
-/*
+    "custom/quicklink_chatgpt": {
+        "format": "",
+        "on-click": "~/.config/ml4w/settings/ai.sh",
+        "tooltip-format": "ChatGPT"
+    },
+    /*
 Don't remove the quicklinkempty
 */
-    "custom/quicklinkempty": {
-    },
-/*
+    "custom/quicklinkempty": {},
+    /*
 Add your quicklinks in your desired order to the status bar
 */
     "group/quicklinks": {
         "orientation": "horizontal",
         "modules": [
-
             "custom/quicklink_browser",
             "custom/quicklink_filemanager",
             "custom/pamac_manager",
-
-/*
+            "custom/quicklink_chatgpt",
+            /*
 Don't remove the quicklinkempty
 */
             "custom/quicklinkempty"

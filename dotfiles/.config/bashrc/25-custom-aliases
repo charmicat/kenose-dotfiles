@@ -2,14 +2,13 @@
 # ALIASES by Luiza
 # -----------------------------------------------------
 
-alias senhas='echo '\''J&r1c0@c0@ra P&l0ur1nh0 N13m&y3r'\'''
 #alias setTether='mkdir -p /dev/net &&  mknod /dev/net/tun c 10 200'
 alias setassociation='xdg-mime default'
 #alias setdual='xrandr --output DVI-1 --auto --right-of DVI-0 --output DVI-0 --auto'
-#alias start_vpn='pon SQUADRA debug dump logfd 2 nodetach'
 alias xterm='xterm -bg black -fg white +ls'
 alias checkUUID="for i in $( grep UUID /etc/fstab ); do for j in $(echo $i | cut -f1 | grep UUID); do ls -la /dev/disk/by-uuid/ | grep $(echo $j | cut -d '=' -f2); done; done;"
-#alias steam_vulkan='VK_ICD_FILENAMES=/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json /usr/bin/steam'
+#alias steam_vulkan='VK_ICD_FILENAMES=/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json /usr/bin/steam'00.
+
 #alias uengine_vulkan='VK_ICD_FILENAMES=/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json uengine'
 alias overgrive_py='python3 /opt/thefanclub/overgrive/overgrive'
 alias setdatevar="export DATE=$(date +%g%m%d_%H%M%S)"
@@ -22,7 +21,7 @@ alias lutris_ssl="OPENSSL_CONF=/home/talto/.config/openssl/openssl.conf lutris"
 # -----------------------------------------------------
 # Remote/Work
 # -----------------------------------------------------
-alias ssh_namecheap="ssh piorwnvw@premium12.web-hosting.com -p 21098" #G1drolokator#0420
+alias ssh_namecheap="ssh piorwnvw@premium12.web-hosting.com -p 21098"
 alias ssh_namecheap_key="ssh premium12.web-hosting.com -v -i /home/talto/.ssh/id_rsa_curr"
 # 802[2-5] is for apache running on remote servers (only on 8024 right now))
 alias connect_to_el6_01='ssh -Y -4 -L 8022:192.168.0.134:8022 -p 2322 lutsch:iopcorp@192.168.0.134'
@@ -62,7 +61,7 @@ alias sound_librarian='wine /home/talto/.wine/drive_c/Program\ Files\ \(x86\)/KO
 alias torbrowser="flatpak run org.torproject.torbrowser-launcher"
 alias authy="flatpak run com.authy.Authy"
 
-# -----------------------------------------------------
+# --------------------------------------------=--------
 # Nicknames
 # -----------------------------------------------------
 alias gqview='geeqie' #gqview was deprecated, geeqie is similar
@@ -106,7 +105,7 @@ alias gogh='bash -c  "$(wget -qO- https://git.io/vQgMr)"'
 alias kenose_nosleep='ssh -f 192.168.0.113 '\''DISPLAY=:0 nohup /home/talto/bin/nosleep_widget.sh &'\'''
 alias kenose_wol='wol -i 192.168.0.255 FC:34:97:E0:A5:DF'
 alias internecine_wol='wol -i 192.168.0.255 08:bf:b8:d8:99:50 c4:3d:1a:ac:cc:4f'
-alias fr24pi_wol='wol -i 192.168.0.255 d8:3a:dd:0e:89:2b d8:3a:dd:0e:89:2d'
+alias skybastard_wol='wol -i 192.168.0.255 d8:3a:dd:0e:89:2b d8:3a:dd:0e:89:2d'
 alias vscode='/usr/bin/vscode --no-sandbox'
 alias rebuild-el9='sudo ldconfig; ./autogen.sh; ./configure --prefix=/home/talto/workspace/interop/vm/'
 alias codex-oss="codex --oss --profile gpt-oss-20b-ollama "
@@ -114,7 +113,7 @@ alias codex-oss="codex --oss --profile gpt-oss-20b-ollama "
 # -----------------------------------------------------
 # Gentoo
 # -----------------------------------------------------
-#alias remerge_all="emerge --oneshot $(qlist -Iv | awk '{print "="$1}')"
+alias remerge_all="emerge --oneshot $(qlist -Iv | awk '{print "="$1}')"
 #alias openglati='eselect opengl set 1'
 #alias openglxorg='eselect opengl set 2'
 alias emerge_deep="emerge -uDUav --with-bdeps=y --keep-going @world"
