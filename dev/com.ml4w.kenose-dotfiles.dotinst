@@ -8,7 +8,7 @@
     "dependencies": "nwg-dock-hyprland, com.ml4w.sidebar and com.ml4w.settings (from flatpak)",
     "source": "workspace/com.ml4w.kenose-dotfiles",
     "subfolder": "dotfiles",
-    "setupscript":"setup/setup.sh",
+    "setupscript": "setup/setup.sh",
     "restore": [],
     "settings": [
         {
@@ -28,7 +28,7 @@
             "file": ".config/hypr/conf/keyboard.conf",
             "checkpoint": "Check",
             "search": "kb_variant",
-            "value": "",
+            "value": "intl",
             "template": "    kb_variant = [VALUE]"
         },
         {
