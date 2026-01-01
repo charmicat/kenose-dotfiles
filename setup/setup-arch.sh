@@ -40,6 +40,10 @@ packages=(
     "pacman-contrib"
     "loupe"
     "power-profiles-daemon"
+    "udiskie"
+    "hyprsunset"
+    "hyprlux"
+    "nwg-displays"
     # Apps
     "waypaper"
     "swaync"

@@ -115,3 +115,5 @@ docs/.vitepress/cache
 docs/.vitepress/devicon
 
 ml4w copy/
+dotfiles/.config/hypr/custom_workspaces.conf
+dotfiles/.config/hypr/custom_monitors.conf
