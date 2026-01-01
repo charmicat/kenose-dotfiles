@@ -156,7 +156,7 @@ else
     # -----------------------------------------------------
     # Reload Waybar
     # -----------------------------------------------------
-notify-send "WTF" "Wayland Session detected, reloading i3 config"
+    notify-send "WTF" "Wayland Session detected, reloading i3 config"
     sleep 1
     "$HOME"/.config/waybar/launch.sh
 
