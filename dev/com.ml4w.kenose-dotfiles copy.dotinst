@@ -90,7 +90,6 @@
 			"source": ".gtkrc-2.0",
 			"value": true
 		},
-		7777777
 		{
 			"title": "bashrc",
 			"source": ".config/bashrc",

@@ -1,74 +1,29 @@
 {
-    "name": "Kenose ML4W Dotfiles for Hyprland",
-    "id": "com.ml4w.kenose-dotfiles",
-    "description": "Kenose ML4W Dotfiles for Hyprland",
-    "version": "1.0.0.0",
-    "author": "Luiza Utsch",
-    "homepage": "https://github.com/charmicat/kenose-dotfiles",
-    "dependencies": "https://mylinuxforwork.github.io/dotfiles/getting-started/dependencies",
-    "source": "https://github.com/charmicat/kenose-dotfiles.git",
-    "tag": "0.0.0.1",
-    "subfolder": "dotfiles",
-    "setupscript": "setup/setup.sh",
-    "restore": [
-        {
-            "title": "Keyboard",
-            "source": ".config/hypr/conf/keyboard.conf",
-            "value": true
-        },
-        {
-            "title": "Monitor",
-            "source": ".config/hypr/conf/monitor.conf",
-            "value": true
-        },
-        {
-            "title": "Hypridle",
-            "source": ".config/hypr/hypridle.conf",
-            "value": true
-        },
-        {
-            "title": "Keybindings",
-            "source": ".config/hypr/conf/keybinding.conf",
-            "value": true
-        },
-        {
-            "title": "Environment",
-            "source": ".config/hypr/conf/environment.conf",
-            "value": true
-        },
-        {
-            "title": "Layout",
-            "source": ".config/hypr/conf/layout.conf",
-            "value": true
-        },
-        {
-            "title": "Windowrules",
-            "source": ".config/hypr/conf/windowrule.conf",
-            "value": true
-        },
-        {
-            "title": "Animation",
-            "source": ".config/hypr/conf/animation.conf",
-            "value": true
-        },
-        {
-            "title": "Decoration",
-            "source": ".config/hypr/conf/decoration.conf",
-            "value": true
-        },
-        {
-            "title": "Window",
-            "source": ".config/hypr/conf/window.conf",
-            "value": true
-        },
-        {
-            "title": "Your custom configuration",
-            "source": ".config/hypr/conf/custom.conf",
-            "value": true
-        },
+	"name": "Kenose ML4W Dotfiles for Hyprland",
+	"id": "com.ml4w.kenose-dotfiles",
+	"description": "Kenose ML4W Dotfiles for Hyprland",
+	"version": "1.0.0.0",
+	"author": "Luiza Utsch",
+	"homepage": "https://github.com/charmicat/kenose-dotfiles",
+	"dependencies": "https://mylinuxforwork.github.io/dotfiles/getting-started/dependencies",
+	"source": "https://github.com/charmicat/kenose-dotfiles.git",
+	"tag": "0.0.0.1",
+	"subfolder": "dotfiles",
+	"setupscript": "setup/setup.sh",
+	"restore": [
 		{
 			"title": "ML4W Settings",
 			"source": ".config/ml4w/settings",
+			"value": true
+		},
+		{
+			"title": "Keyboard",
+			"source": ".config/hypr/conf/keyboard.conf",
+			"value": true
+		},
+		{
+			"title": "Monitor",
+			"source": ".config/hypr/conf/monitor.conf",
 			"value": true
 		},
 		{
@@ -76,22 +31,66 @@
 			"source": ".config/waypaper",
 			"value": true
 		},
-        {
-            "title": "GTK 3",
-            "source": ".config/gtk-3.0",
-            "value": true
-        },
-        {
-            "title": "GTK 4",
-            "source": ".config/gtk-4.0",
-            "value": true
-        },
-        {
-            "title": "GTK 2",
-            "source": ".gtkrc-2.0",
-            "value": true
+		{
+			"title": "Hypridle",
+			"source": ".config/hypr/hypridle.conf",
+			"value": true
 		},
-		7777777
+		{
+			"title": "Keybindings",
+			"source": ".config/hypr/conf/keybinding.conf",
+			"value": true
+		},
+		{
+			"title": "Environment",
+			"source": ".config/hypr/conf/environment.conf",
+			"value": true
+		},
+		{
+			"title": "Layout",
+			"source": ".config/hypr/conf/layout.conf",
+			"value": true
+		},
+		{
+			"title": "Windowrules",
+			"source": ".config/hypr/conf/windowrule.conf",
+			"value": true
+		},
+		{
+			"title": "Animation",
+			"source": ".config/hypr/conf/animation.conf",
+			"value": true
+		},
+		{
+			"title": "Decoration",
+			"source": ".config/hypr/conf/decoration.conf",
+			"value": true
+		},
+		{
+			"title": "Window",
+			"source": ".config/hypr/conf/window.conf",
+			"value": true
+		},
+		{
+			"title": "Your custom configuration",
+			"source": ".config/hypr/conf/custom.conf",
+			"value": true
+		},
+		{
+			"title": "GTK 3",
+			"source": ".config/gtk-3.0",
+			"value": true
+		},
+		{
+			"title": "GTK 4",
+			"source": ".config/gtk-4.0",
+			"value": true
+		},
+		{
+			"title": "GTK 2",
+			"source": ".gtkrc-2.0",
+			"value": true
+		},
 		{
 			"title": "bashrc",
 			"source": ".config/bashrc",
@@ -260,60 +259,58 @@
 		{
 			"type": "file",
 			"name": "edge-flags.conf"
-        }
-    ],
-    "settings": [
-        {
-            "type": "text",
-            "mode": "replacesingleline",
-            "title": "Keyboard Layout",
-            "file": ".config/hypr/conf/keyboard.conf",
-            "checkpoint": "Check",
-            "search": "kb_layout",
-            "value": "gb",
-            "template": "    kb_layout = [VALUE]"
-        },
-        {
-            "type": "text",
-            "mode": "replacesingleline",
-            "title": "Keyboard Variant",
-            "file": ".config/hypr/conf/keyboard.conf",
-            "checkpoint": "Check",
-            "search": "kb_variant",
-            "value": "intl",
-            "template": "    kb_variant = [VALUE]"
-        },
-        {
-            "type": "text",
-            "mode": "overwritefile",
-            "title": "Default Terminal",
-            "file": ".config/ml4w/settings/terminal.sh",
-            "checkpoint": "Check",
-            "search": "",
-            "value": "xfce4-terminal",
-            "template": ""
-        },
-        {
-            "type": "text",
-            "mode": "overwritefile",
-            "title": "Default Browser",
-            "file": ".config/ml4w/settings/browser.sh",
-            "checkpoint": "Check",
-            "search": "",
-            "value": "firefox",
-            "template": ""
-        },
-                {
-            "type": "text",
-            "mode": "overwritefile",
-            "title": "Default Text Editor",
-            "file": ".config/ml4w/settings/editor.sh",
-            "checkpoint": "Check",
-            "search": "",
-            "value": "nvim",
-            "template": ""
-        }
-    ],
-    "dotinst": "https://raw.githubusercontent.com/charmicat/kenose-dotfiles/refs/heads/main/com.ml4w.kenose-dotfiles.dotinst",
-    "type": "remote"
+		}
+	],
+	"settings": [
+		{
+			"type": "text",
+			"mode": "replacesingleline",
+			"title": "Keyboard Layout",
+			"file": ".config/hypr/conf/keyboard.conf",
+			"checkpoint": "Check",
+			"search": "kb_layout",
+			"value": "gb",
+			"template": "    kb_layout = [VALUE]"
+		},
+		{
+			"type": "text",
+			"mode": "replacesingleline",
+			"title": "Keyboard Variant",
+			"file": ".config/hypr/conf/keyboard.conf",
+			"checkpoint": "Check",
+			"search": "kb_variant",
+			"value": "intl",
+			"template": "    kb_variant = [VALUE]"
+		},
+		{
+			"type": "text",
+			"mode": "overwritefile",
+			"title": "Default Terminal",
+			"file": ".config/ml4w/settings/terminal.sh",
+			"checkpoint": "Check",
+			"search": "",
+			"value": "xfce4-terminal",
+			"template": ""
+		},
+		{
+			"type": "text",
+			"mode": "overwritefile",
+			"title": "Default Browser",
+			"file": ".config/ml4w/settings/browser.sh",
+			"checkpoint": "Check",
+			"search": "",
+			"value": "firefox",
+			"template": ""
+		},
+		{
+			"type": "text",
+			"mode": "overwritefile",
+			"title": "Default Text Editor",
+			"file": ".config/ml4w/settings/editor.sh",
+			"checkpoint": "Check",
+			"search": "",
+			"value": "nvim",
+			"template": ""
+		}
+	]
 }
