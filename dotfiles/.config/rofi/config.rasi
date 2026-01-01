@@ -11,13 +11,17 @@
 
 /* ---- Configuration ---- */
 configuration {
-    modi:                       "drun,filebrowser,window,run";
+    // modes:                       "drun,filebrowser,window,run,ssh,emoji,calc";
+    modes:                       "drun,filebrowser,window,run,calc";
     font:                       "Fira Sans 11";
     show-icons:                 true;
     display-drun:                " ";
     display-run:                 " ";
-    display-filebrowser:         "";
-    display-window:              "";
+    display-filebrowser:         " ";
+    display-window:              " ";
+    display-calc:                " ";
+    display-ssh:                 " ";
+    display-emoji:               " ";
 	drun-display-format:        "{name}";
     hover-select:               false;
     scroll-method:              1;
