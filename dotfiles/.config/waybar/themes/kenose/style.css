@@ -14,7 +14,7 @@
  * ----------------------------------------------------- */
 @import '/home/talto/.config/waybar/colors.css';
 
-@define-color icon_color #FFFFFF;
+/* @define-color icon_color #FFFFFF; */
 @define-color border_color @secondary;
 @define-color background @surface;
 

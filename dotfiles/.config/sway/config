@@ -36,17 +36,17 @@ workspace_layout stacking
 
 # i3bar to name display a workspace bar (plus the system information i3status
 # finds out, if available)
-# moved to $XDG_CONFIG_HOME/i3/conf.d/colors.conf, otherwise 2 bars are created
+# moved to $XDG_CONFIG_HOME/i3/conf.d/01-colors.conf, otherwise 2 bars are created
 #bar {
 #    status_command i3status
 #    tray_output none
 #
 }
 
-## Background setting.(moved to conf.d/startup.conf)
+## Background setting.(moved to conf.d/04-startup.conf)
 # exec --no-startup-id xsetroot -solid "#262729"
 
-include ~/.config/i3/conf.d/*.conf
+include ~/.config/sway/conf.d/*.conf
 
 
 #######################################################################

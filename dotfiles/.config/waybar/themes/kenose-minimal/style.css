@@ -248,7 +248,7 @@ window#waybar.empty #window {
 #idle_inhibitor {
     margin-right: 15px;
     font-size: 22px;
-    font-weight:#
+    font-weight: bold;
     opacity: 1.0;
     color: @icon_color;
     transition: all 0.3s ease-out;    

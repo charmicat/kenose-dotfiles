@@ -1,1 +1,1 @@
-/kenose;/kenose/default
+/kenose;/kenose
