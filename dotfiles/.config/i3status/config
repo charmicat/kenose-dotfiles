@@ -24,6 +24,7 @@ general {
 # #order += "run_watch DHCP"
 # #order += "run_watch VPNC"
 # #order += "path_exists VPN"
+order += "wireless wlan0"
 order += "wireless wlp5s0"
 order += "ethernet enp6s0"
 # #order += "cpu_temperature 0"
@@ -35,6 +36,11 @@ order += "tztime florida"
 order += "tztime local"
 
 wireless wlp5s0 {
+  format_up = "W: (%quality at %essid, %bitrate) %ip"
+  format_down = "W: down"
+}
+
+wireless wlan0 {
   format_up = "W: (%quality at %essid, %bitrate) %ip"
   format_down = "W: down"
 }
