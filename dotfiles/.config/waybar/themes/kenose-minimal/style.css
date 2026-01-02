@@ -16,7 +16,8 @@
 
 @define-color icon_color #FFFFFF;
 @define-color border_color @secondary;
-@define-color background @surface;
+@define-color background transparent;
+@define-color on_surface #FFFFFF;
 
 /* -----------------------------------------------------
  * General
@@ -199,8 +200,6 @@ window#waybar.empty #window {
 #custom-quicklink_email,
 #custom-quicklink_thunderbird,
 #custom-quicklink_calculator,
-#custom-quicklink_pamac_manager,
-#custom-quicklink_openai,
 #custom-waybarthemes {
     margin-right: 15px;
     font-size: 20px;
@@ -249,7 +248,7 @@ window#waybar.empty #window {
 #idle_inhibitor {
     margin-right: 15px;
     font-size: 22px;
-    font-weight: bold;
+    font-weight:#
     opacity: 1.0;
     color: @icon_color;
     transition: all 0.3s ease-out;    

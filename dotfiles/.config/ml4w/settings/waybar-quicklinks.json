@@ -44,7 +44,7 @@ You can reload waybar with SUPER + SHIFT + B
         "on-click": "~/.config/ml4w/settings/calculator.sh",
         "tooltip-format": "Open calculator"
     },
-    "custom/pamac_manager": {
+    "custom/quicklink_pamac_manager": {
         "format": "",
         "on-click": "pamac-manager",
         "tooltip-format": "Pamac manager"
@@ -69,7 +69,7 @@ Add your quicklinks in your desired order to the status bar
         "modules": [
             "custom/quicklink_firefox",
             "custom/quicklink_filemanager",
-            "custom/pamac_manager",
+            "custom/quicklink_pamac_manager",
             "custom/spacer",
             "custom/quicklink_chatgpt",
             /*
