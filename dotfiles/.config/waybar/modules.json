@@ -30,10 +30,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty",
-      "kitty"
-    ],
+    "ignore-list": [],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
@@ -69,7 +66,6 @@
     "format": "",
     "tooltip-format": "Tools"
   },
-
   // Now Playing
   "custom/nowplaying": {
     "exec": "~/.config/ml4w/scripts/now-playing.sh",
@@ -83,7 +79,6 @@
     "on-click-middle": "playerctl previous",
     "tooltip-format": "Left: Play/Pause\nRight: Next\nMiddle: Previous"
   },
-  
   // Cliphist
   "custom/cliphist": {
     "format": "",
@@ -103,6 +98,11 @@
     "hide-empty-text": true,
     "on-click": "~/.config/ml4w/settings/installupdates.sh"
   },
+  // Theme Starter Label
+  "custom/starter": {
+    "format": "THEME STARTER",
+    "tooltip": false
+  },
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
@@ -119,13 +119,31 @@
   // Settings
   "custom/settings": {
     "format": "",
-    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
+    "on-click": "sleep 0.1 && flatpak run com.ml4w.settings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
   // Keybindings
   "custom/keybindings": {
     "format": "",
     "on-click": "~/.config/hypr/scripts/keybindings.sh",
+    "tooltip": false
+  },
+  // Filemanager Launcher
+  "custom/filemanager": {
+    "format": "",
+    "on-click": "thunar",
+    "tooltip": false
+  },
+  // Browser Launcher
+  "custom/browser": {
+    "format": "",
+    "on-click": "~/.config/ml4w/settings/browser.sh",
+    "tooltip": false
+  },
+  // ChatGPT Launcher
+  "custom/chatgpt": {
+    "format": "",
+    "on-click": "~/.config/ml4w/settings/ai.sh",
     "tooltip": false
   },
   // Calculator
@@ -191,6 +209,16 @@
     "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
     "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
   },
+  // Idle Inhibator
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip": true,
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "on-click-right": "hyprlock"
+  },
   // Hypridle inhibitor
   "custom/hypridle": {
     "format": "",
@@ -199,7 +227,8 @@
     "exec-on-event": true,
     "interval": 60,
     "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
+    // "on-click-right": "hyprlock"
   },
   // Keyboard State
   "keyboard-state": {
@@ -261,6 +290,7 @@
       "disk",
       "cpu",
       "memory",
+      "custom/nvidia",
       "hyprland/language"
     ]
   },
@@ -314,7 +344,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
+    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle"
   },
   // Battery
   "battery": {
@@ -413,5 +443,10 @@
       ""
     ],
     "scroll-step": 1
+  },
+  "custom/nvidia": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
+    "format": "{} 🖥️",
+    "interval": 2
   }
 }

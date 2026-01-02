@@ -13,7 +13,7 @@
     "include": [
         // "~/.config/ml4w/settings/waybar-quicklinks.json",
         "~/.config/waybar/modules.json",
-        "~/.config/waybar/themes/kenose/modules.json"
+        "~/.config/waybar/themes/kenose-minimal/modules.json"
     ],
     // Choose the order of the modules
     "modules-left": [
