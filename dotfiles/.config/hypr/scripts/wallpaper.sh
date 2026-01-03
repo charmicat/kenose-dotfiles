@@ -144,9 +144,9 @@ THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | aw
 
 _writeLog "Execute matugen with $used_wallpaper"
 if [ "$THEME_PREF" -eq 1 ]; then
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark"
+    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark" --show-colors -v 
 else
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light"
+    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light" --show-colors -v
 fi
 
 if [ "$IS_X11_SESSION" -eq 1 ]; then

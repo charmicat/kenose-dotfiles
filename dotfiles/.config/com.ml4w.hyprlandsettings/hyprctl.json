@@ -16,11 +16,363 @@
         "value": 1.0
     },
     {
-        "key": "general:gaps_workspaces",
+        "key": "general:resize_on_border",
+        "value": "true"
+    },
+    {
+        "key": "general:border_size",
+        "value": 1
+    },
+    {
+        "key": "general:extend_border_grab_area",
+        "value": 15
+    },
+    {
+        "key": "general:hover_icon_on_border",
+        "value": "true"
+    },
+    {
+        "key": "general:snap:window_gap",
+        "value": 10
+    },
+    {
+        "key": "general:snap:monitor_gap",
+        "value": 10
+    },
+    {
+        "key": "decoration:rounding",
         "value": 0
     },
     {
-        "key": "general:resize_on_border",
+        "key": "decoration:active_opacity",
+        "value": 1.0
+    },
+    {
+        "key": "decoration:inactive_opacity",
+        "value": 0.7
+    },
+    {
+        "key": "decoration:fullscreen_opacity",
+        "value": 1.0
+    },
+    {
+        "key": "decoration:shadow:enabled",
+        "value": false
+    },
+    {
+        "key": "decoration:dim_inactive",
         "value": "false"
+    },
+    {
+        "key": "decoration:blur:enabled",
+        "value": "false"
+    },
+    {
+        "key": "animations:enabled",
+        "value": false
+    },
+    {
+        "key": "input:numlock_by_default",
+        "value": "true"
+    },
+    {
+        "key": "input:resolve_binds_by_sym",
+        "value": "true"
+    },
+    {
+        "key": "input:follow_mouse",
+        "value": 1
+    },
+    {
+        "key": "input:mouse_refocus",
+        "value": "false"
+    },
+    {
+        "key": "input:float_switch_override_focus",
+        "value": 2
+    },
+    {
+        "key": "input:special_fallthrough",
+        "value": false
+    },
+    {
+        "key": "group:insert_after_current",
+        "value": "true"
+    },
+    {
+        "key": "group:focus_removed_window",
+        "value": "true"
+    },
+    {
+        "key": "group:merge_groups_on_drag",
+        "value": "true"
+    },
+    {
+        "key": "group:merge_groups_on_groupbar",
+        "value": "true"
+    },
+    {
+        "key": "group:auto_group",
+        "value": false
+    },
+    {
+        "key": "group:merge_floated_into_tiled_on_groupbar",
+        "value": false
+    },
+    {
+        "key": "group:group_on_movetoworkspace",
+        "value": false
+    },
+    {
+        "key": "group:groupbar:enabled",
+        "value": "true"
+    },
+    {
+        "key": "group:groupbar:font_size",
+        "value": 8
+    },
+    {
+        "key": "group:groupbar:gradients",
+        "value": "true"
+    },
+    {
+        "key": "group:groupbar:height",
+        "value": 14
+    },
+    {
+        "key": "group:groupbar:stacked",
+        "value": "false"
+    },
+    {
+        "key": "group:groupbar:priority",
+        "value": 3
+    },
+    {
+        "key": "group:groupbar:render_titles",
+        "value": false
+    },
+    {
+        "key": "group:groupbar:scrolling",
+        "value": "true"
+    },
+    {
+        "key": "misc:disable_hyprland_logo",
+        "value": "true"
+    },
+    {
+        "key": "misc:disable_splash_rendering",
+        "value": "true"
+    },
+    {
+        "key": "misc:force_default_wallpaper",
+        "value": 0
+    },
+    {
+        "key": "misc:vfr",
+        "value": "true"
+    },
+    {
+        "key": "misc:vrr",
+        "value": 0
+    },
+    {
+        "key": "misc:mouse_move_enables_dpms",
+        "value": false
+    },
+    {
+        "key": "misc:key_press_enables_dpms",
+        "value": "true"
+    },
+    {
+        "key": "misc:always_follow_on_dnd",
+        "value": false
+    },
+    {
+        "key": "misc:layers_hog_keyboard_focus",
+        "value": false
+    },
+    {
+        "key": "misc:disable_autoreload",
+        "value": false
+    },
+    {
+        "key": "misc:enable_swallow",
+        "value": false
+    },
+    {
+        "key": "misc:focus_on_activate",
+        "value": "true"
+    },
+    {
+        "key": "misc:mouse_move_focuses_monitor",
+        "value": "true"
+    },
+    {
+        "key": "misc:allow_session_lock_restore",
+        "value": "true"
+    },
+    {
+        "key": "misc:close_special_on_empty",
+        "value": "false"
+    },
+    {
+        "key": "misc:exit_window_retains_fullscreen",
+        "value": false
+    },
+    {
+        "key": "misc:initial_workspace_tracking",
+        "value": 0
+    },
+    {
+        "key": "misc:middle_click_paste",
+        "value": "true"
+    },
+    {
+        "key": "misc:render_unfocused_fps",
+        "value": 15
+    },
+    {
+        "key": "misc:disable_xdg_env_checks",
+        "value": false
+    },
+    {
+        "key": "misc:lockdead_screen_delay",
+        "value": 1000
+    },
+    {
+        "key": "binds:pass_mouse_when_bound",
+        "value": false
+    },
+    {
+        "key": "binds:workspace_back_and_forth",
+        "value": false
+    },
+    {
+        "key": "binds:allow_workspace_cycles",
+        "value": "true"
+    },
+    {
+        "key": "binds:focus_preferred_method",
+        "value": 0
+    },
+    {
+        "key": "binds:ignore_group_lock",
+        "value": false
+    },
+    {
+        "key": "binds:movefocus_cycles_fullscreen",
+        "value": false
+    },
+    {
+        "key": "binds:movefocus_cycles_groupfirst",
+        "value": "true"
+    },
+    {
+        "key": "binds:disable_keybind_grabbing",
+        "value": false
+    },
+    {
+        "key": "binds:window_direction_monitor_fallback",
+        "value": false
+    },
+    {
+        "key": "binds:allow_pin_fullscreen",
+        "value": "true"
+    },
+    {
+        "key": "xwayland:force_zero_scaling",
+        "value": false
+    },
+    {
+        "key": "opengl:nvidia_anti_flicker",
+        "value": "true"
+    },
+    {
+        "key": "render:direct_scanout",
+        "value": false
+    },
+    {
+        "key": "render:expand_undersized_textures",
+        "value": false
+    },
+    {
+        "key": "render:xp_mode",
+        "value": false
+    },
+    {
+        "key": "render:ctm_animation",
+        "value": 2
+    },
+    {
+        "key": "cursor:no_break_fs_vrr",
+        "value": false
+    },
+    {
+        "key": "cursor:min_refresh_rate",
+        "value": 24
+    },
+    {
+        "key": "cursor:hotspot_padding",
+        "value": 0
+    },
+    {
+        "key": "cursor:no_warps",
+        "value": false
+    },
+    {
+        "key": "cursor:persistent_warps",
+        "value": false
+    },
+    {
+        "key": "cursor:zoom_factor",
+        "value": 1.0
+    },
+    {
+        "key": "cursor:zoom_rigid",
+        "value": false
+    },
+    {
+        "key": "cursor:enable_hyprcursor",
+        "value": "true"
+    },
+    {
+        "key": "cursor:hide_on_key_press",
+        "value": false
+    },
+    {
+        "key": "cursor:hide_on_touch",
+        "value": false
+    },
+    {
+        "key": "cursor:use_cpu_buffer",
+        "value": "true"
+    },
+    {
+        "key": "debug:colored_stdout_logs",
+        "value": "true"
+    },
+    {
+        "key": "dwindle:pseudotile",
+        "value": "true"
+    },
+    {
+        "key": "dwindle:preserve_split",
+        "value": "true"
+    },
+    {
+        "key": "dwindle:smart_split",
+        "value": "true"
+    },
+    {
+        "key": "dwindle:smart_resizing",
+        "value": false
+    },
+    {
+        "key": "master:allow_small_split",
+        "value": "true"
+    },
+    {
+        "key": "master:smart_resizing",
+        "value": "true"
     }
 ]

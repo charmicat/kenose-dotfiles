@@ -1582,9 +1582,11 @@ delim = " "
 # {counter_sup} - superscripted count of clients on the workspace, and simple {counter}, {delim}
 # {icon}, {client}
 # workspace formatter
-workspace = "<span color='red'>{name}{delim}{clients}</span>"
+workspace = "{name}{delim}{clients}"
+# workspace = "<span color='red'>{name}{delim}{clients}</span>"
 # workspace_empty = "<b><span color='yellow'>{id}-{name}:</span></b>{delim}{clients}"
-workspace_empty = "<b><span color='yellow'>{name}</span></b>"
+workspace_empty = "{name}"
+# workspace_empty = "<b><span color='yellow'>{name}</span></b>"
 # workspace = "<b><span color='red'>{id}-{name}:</span></b>{delim}{clients}"
 # workspace = "{id}:<span color='white'>{delim}{clients}</span>"
 # workspace = "<span color='red'>{id}:</span>{delim}{clients}"
@@ -1592,7 +1594,8 @@ workspace_empty = "<b><span color='yellow'>{name}</span></b>"
 client = "{icon}{delim}"
 # deduplicate client formatter
 client_fullscreen = "[{icon}]{delim}"
-client_active = "<span color='red'>{icon}</span>"
+client_active = "{icon}"
+# client_active = "<span color='red'>{icon}</span>"
 client_dup = "{icon}{counter_sup}{delim}"
 client_dup_active = "*{icon}*{delim}{icon}{counter_unfocused_sup}"
 client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"

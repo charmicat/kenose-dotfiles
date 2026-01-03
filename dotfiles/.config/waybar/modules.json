@@ -462,7 +462,7 @@
     "exec": "mosquitto_sub -h YOUR_HOST -t 'zigbee2mqtt/YOUR_SMART_DEV' | jq '.power' --unbuffered",
     "exec-if": "exit 0",
     "restart-interval": 60,
-    "escape": true,
+    "escape": true
   },
   "custom/adaptive-sync": {
     "format": "  VRR{} ",
