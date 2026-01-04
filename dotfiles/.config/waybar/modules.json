@@ -93,7 +93,7 @@
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/ml4w/scripts/updates.sh",
-    "interval": 1800,
+    "interval": 3600,
     "signal": 1,
     "hide-empty-text": true,
     "on-click": "~/.config/ml4w/settings/installupdates.sh"
@@ -121,6 +121,12 @@
     "format": "",
     "on-click": "sleep 0.1 && flatpak run com.ml4w.settings",
     "tooltip-format": "ML4W Dotfiles Settings"
+  },
+    // Settings
+  "custom/services": {
+    "format": "",
+    "on-click": "sleep 0.1 && uuctl",
+    "tooltip-format": "Manage services"
   },
   // Keybindings
   "custom/keybindings": {
@@ -329,7 +335,8 @@
     "modules": [
       "custom/settings",
       "custom/waybarthemes",
-      "custom/wallpaper"
+      "custom/wallpaper",
+      "custom/services"
     ]
   },
   // Network

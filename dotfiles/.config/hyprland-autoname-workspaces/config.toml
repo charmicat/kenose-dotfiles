@@ -494,8 +494,8 @@ version = "1.2.0"
 "(?i)fire" = ""
 "(?i)fire-alt" = ""
 "(?i)fire-extinguisher" = ""
-"(?i)firefox" = "www"
-"(?i)firefox-browser" = "www"
+"(?i)firefox" = ""
+"(?i)firefox-browser" = ""
 "(?i)first-aid" = ""
 "(?i)first-order" = ""
 "(?i)first-order-alt" = ""
@@ -1468,6 +1468,7 @@ shopping = ""
 "(?i)waydroid.*" = "droid"
 snappergui = ""
 virt-manager = ""
+pamac-manager = ""
 chrome-faolnafnngnfdaknnbpnkhgohbobgegn-default = ""
 libreoffice-writer = ""
 calibre-gui = ""
@@ -1569,8 +1570,7 @@ DEFAULT = "*{icon}*"
 aProgram = "^$"
 
 [format]
-# Deduplicate icons if enable.
-# A superscripted counter will be added.
+# Deduplicate icons if enable. A superscripted counter will be added.
 dedup = true
 # dedup more
 dedup_inactive_fullscreen = true
