@@ -1,1 +1,1 @@
-nvim-qt
+nvim
