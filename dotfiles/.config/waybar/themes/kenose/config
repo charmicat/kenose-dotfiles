@@ -17,7 +17,7 @@
     ],
     // Choose the order of the modules
     "modules-left": [
-        "custom/appmenu",
+        // "custom/appmenu",
         "custom/appmenuicon",
         "hyprland/workspaces",
         "wlr/taskbar",

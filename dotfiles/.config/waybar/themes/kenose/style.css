@@ -284,6 +284,23 @@ window#waybar.empty #window {
     border-color: @primary;
 }
 
+#custom-appmenuicon {
+    background-color: @background;
+    font-size: 18px;
+    color: @on_surface;
+    border-radius: 8px;
+    padding: 3px 10px 3px 10px;
+    /* margin: 3px 10px 3px 0px; */
+    border: 2px solid @border_color;
+    transition: all 0.3s ease-out;    
+}
+
+#custom-appmenuicon:hover {
+    color: @on_surface;
+    background: @primary_container;
+    border-color: @primary;
+}
+
 /* -----------------------------------------------------
  * Custom Now Playing
  * ----------------------------------------------------- */

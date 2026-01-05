@@ -21,14 +21,14 @@ _launch_rofi_uwsm() {
 }
 
 # Use Wofi+UWSM
-_launch_rofi_uwsm() {
+_launch_wofi_uwsm() {
     pkill wofi || uwsm app -- "$(D=$(wofi --show drun --define=drun-print_desktop_file=true); case "$D" in *'.desktop '*) echo "${D%.desktop *}.desktop:${D#*.desktop }";; *) echo "$D";; esac)"
 }
 
 if [ "$launcher" == "walker" ]; then
     _launch_walker
 elif [ "$launcher" == "wofi" ]; then
-    _launch_rofi_uwsm
+    _launch_wofi_uwsm
 else
     _launch_rofi_uwsm
 fi

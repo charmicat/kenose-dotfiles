@@ -1469,6 +1469,7 @@ shopping = ""
 snappergui = ""
 virt-manager = ""
 "(?i)pamac.*" = ""
+"(?i)remmina.*" = ""
 chrome-faolnafnngnfdaknnbpnkhgohbobgegn-default = ""
 libreoffice-writer = ""
 calibre-gui = ""
@@ -1530,8 +1531,9 @@ neomutt = ""
 
 
 [class_active]
-DEFAULT = "*{icon}*"
+DEFAULT = "{icon}"
 "(?i)firefox" = "<span color='orange'> {class}</span>"
+"(?i)teams.*" = "<span color='purple'> {class}</span>"
 
 [initial_class]
 
