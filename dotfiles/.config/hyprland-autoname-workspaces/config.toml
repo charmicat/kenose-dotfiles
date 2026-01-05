@@ -1534,6 +1534,7 @@ neomutt = ""
 DEFAULT = "{icon}"
 "(?i)firefox" = "<span color='orange'> {class}</span>"
 "(?i)teams.*" = "<span color='purple'> {class}</span>"
+"(?i)remmina.*" = "<span color='cyan'> {class}</span>"
 
 [initial_class]
 
