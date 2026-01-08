@@ -36,7 +36,8 @@
     },
     "rewrite": {
       "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
+      "Foot Server": "Terminal",
+      ".*(steam_app_[0-9]+).*": "Game"
     }
   },
   // Hyprland Window
@@ -122,7 +123,7 @@
     "on-click": "sleep 0.1 && flatpak run com.ml4w.settings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
-    // Settings
+  // Settings
   "custom/services": {
     "format": "",
     "on-click": "sleep 0.1 && uuctl",
@@ -250,7 +251,12 @@
   // System tray
   "tray": {
     "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+      "teams-fot-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png"
+    }
   },
   // Clock
   "clock": {
@@ -479,5 +485,24 @@
     "exec": "swaymsg -r -t get_outputs | jq '.[0].adaptive_sync_status'",
     "on-click": "swaymsg output DP-1 adaptive_sync on",
     "on-click-right": "swaymsg output DP-1 adaptive_sync off"
+  },
+  "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+  },
+  "systemd-failed-units": {
+    "hide-on-ok": false, // Do not hide if there is zero failed units.
+    "format": "✗ {nr_failed}",
+    "format-ok": "✓",
+    "system": true, // Monitor failed systemwide units.
+    "user": true //  Monitor failed user units.
   }
 }

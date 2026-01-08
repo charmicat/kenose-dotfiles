@@ -46,6 +46,7 @@
         "custom/ml4w-welcome",
         // "custom/waybarthemes",
         "custom/exit",
+        "idle_inhibitor",
         "clock"
     ]
 }

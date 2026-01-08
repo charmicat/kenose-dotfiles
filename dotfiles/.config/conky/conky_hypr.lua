@@ -86,7 +86,7 @@ config = {
 
 -- Text alignment, other possible values are commented
 alignment = 'top_left', --top_left|top_right|bottom_left|bottom_right|none
--- first scree
+-- first screen
 xinerama_head = 0, 
 
 -- Gap between borders of screen and text
@@ -176,3 +176,5 @@ S.M.A.R.T. errors:
 ${color1}${tail /var/tmp/smartctl_out.txt 10 1440}${color}
 
 ]];
+
+-- EOF
