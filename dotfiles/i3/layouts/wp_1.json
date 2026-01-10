@@ -1,0 +1,195 @@
+{
+  "type": "workspace",
+  "name": "1",
+  "nodes": [
+    {
+      "type": "con",
+      "name": "widgets",
+      "layout": "splith",
+      "nodes": [],
+      "floating_nodes": []
+    }
+  ],
+  "floating_nodes": [
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": null,
+      "rect": {
+        "height": 176,
+        "width": 218,
+        "x": 2013,
+        "y": 842
+      },
+      "type": "floating_con",
+      "nodes": [
+        {
+          "border": "none",
+          "current_border_width": 2,
+          "floating": "user_on",
+          "geometry": {
+            "height": 176,
+            "width": 218,
+            "x": 2013,
+            "y": 842
+          },
+          "marks": [],
+          "name": "Orage",
+          "percent": 1,
+          "swallows": [
+            {
+              "class": "^Orage$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    },
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": null,
+      "rect": {
+        "height": 432,
+        "width": 412,
+        "x": 3110,
+        "y": 599
+      },
+      "type": "floating_con",
+      "nodes": [
+        {
+          "border": "none",
+          "current_border_width": 2,
+          "floating": "user_on",
+          "geometry": {
+            "height": 6,
+            "width": 6,
+            "x": 0,
+            "y": 0
+          },
+          "marks": [],
+          "name": "holy holy holy",
+          "percent": 1,
+          "swallows": [
+            {
+              "class": "^Conky$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    },
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": null,
+      "rect": {
+        "height": 141,
+        "width": 320,
+        "x": 3199,
+        "y": 0
+      },
+      "type": "floating_con",
+      "nodes": [
+        {
+          "border": "normal",
+          "current_border_width": 2,
+          "floating": "user_on",
+          "geometry": {
+            "height": 119,
+            "width": 314,
+            "x": 3199,
+            "y": 0
+          },
+          "marks": [],
+          "name": "nosleep",
+          "percent": 1,
+          "swallows": [
+            {
+              "title": "^nosleep$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    },
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": null,
+      "rect": {
+        "height": 742,
+        "width": 425,
+        "x": 1608,
+        "y": -8
+      },
+      "type": "floating_con",
+      "nodes": [
+        {
+          "border": "none",
+          "current_border_width": 2,
+          "floating": "user_on",
+          "geometry": {
+            "height": 5,
+            "width": 5,
+            "x": 0,
+            "y": 0
+          },
+          "marks": [],
+          "name": "agios agios agios",
+          "percent": 1,
+          "swallows": [
+            {
+              "class": "^Conky$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    },
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": null,
+      "rect": {
+        "height": 141,
+        "width": 320,
+        "x": 1608,
+        "y": 881
+      },
+      "type": "floating_con",
+      "nodes": [
+        {
+          "border": "normal",
+          "current_border_width": 2,
+          "floating": "user_on",
+          "geometry": {
+            "height": 119,
+            "width": 314,
+            "x": 0,
+            "y": 894
+          },
+          "marks": [],
+          "name": "gotop",
+          "percent": 1,
+          "swallows": [
+            {
+              "title": "^gotop$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    }
+  ]
+}

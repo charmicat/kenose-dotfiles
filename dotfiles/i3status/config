@@ -1,0 +1,100 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+  output_format = "i3bar"
+  interval = 5
+  colors = true
+  color_good = "#c8cc78" ##00FF00
+  color_degraded = "#c9c9a5" ##FFFF00
+  color_bad = "#ffb4ab" ##FF0000
+  separator = " | "
+}
+
+# #order += "ipv6"
+# #order += "disk /"
+# #order += "run_watch DHCP"
+# #order += "run_watch VPNC"
+# #order += "path_exists VPN"
+order += "wireless wlp5s0"
+order += "ethernet enp6s0"
+# #order += "cpu_temperature 0"
+order += "memory"
+order += "load"
+order += "run_watch VNC"
+order += "tztime brazil"
+order += "tztime florida"
+order += "tztime local"
+
+wireless wlp5s0 {
+  format_up = "W: (%quality at %essid, %bitrate) %ip"
+  format_down = "W: down"
+}
+
+ethernet enp6s0 {
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
+}
+
+run_watch DHCP {
+  pidfile = "/var/run/dhclient*.pid"
+}
+
+#run_watch VPNC {
+  # file containing the PID of a vpnc process
+#       pidfile = "/var/run/vpnc/pid"
+#
+# }
+
+tztime brazil {
+  format = "BR: %H:%M:%S %Z"
+  timezone = "Brazil/East"
+}
+tztime florida {
+  format = "FL: %H:%M:%S %Z"
+  timezone = "US/Eastern"
+}
+
+run_watch VNC {
+  # file containing the PID of a vnc process
+  pidfile = "/var/run/vncsession-\:2.pid"
+}
+
+path_exists VPN {
+  # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+  path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+  format = "%Y-%m-%d %H:%M:%S %Z"
+  hide_if_equals_localtime = false
+}
+
+load {
+       format = "%5min"
+}
+
+cpu_temperature 0 {
+  format = "T: %degrees °C"
+  path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+  format = "%free %available (%used) / %total"
+  threshold_degraded = "10%"
+				   threshold_critical= "5%"
+  format_degraded = "MEMORY: %free"
+}
+
+disk "/"{
+  format = "%free"
+}
+
+read_file uptime {
+  path = "/proc/uptime"
+}
