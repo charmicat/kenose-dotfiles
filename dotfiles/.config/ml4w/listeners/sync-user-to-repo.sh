@@ -15,7 +15,7 @@ if [[ "$3" == "-n" || "$3" == "--dry-run" ]]; then
 fi
 
 SOURCE_DIR=${1:-"/home/talto/.mydotfiles/com.ml4w.kenose-dotfiles.dev/.config"}
-TARGET_DIR=${2:-"/home/talto/workspace/com.ml4w.kenose-dotfiles/dotfiles"}
+TARGET_DIR=${2:-"/home/talto/workspace/com.ml4w.kenose-dotfiles/dotfiles/.config"}
 
 # Configuration
 if [ ! -d "$SOURCE_DIR" ]; then
@@ -27,7 +27,8 @@ if [ ! -d "$TARGET_DIR" ]; then
     exit 1
 fi
 
-EVENTS="modify,create,delete,move"
+# EVENTS="modify,create,delete,move"
+EVENTS="modify,create"
 EXCLUDE_FILE="$SCRIPT_DIR/protected.txt"
 
 echo ":: Source: $SOURCE_DIR"

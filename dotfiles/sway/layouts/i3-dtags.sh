@@ -1,1 +1,0 @@
-3rd-party/i3-dtags.sh

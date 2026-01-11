@@ -17,7 +17,7 @@ _launch_rofi() {
 
 # Use Rofi+UWSM
 _launch_rofi_uwsm() {
-    pkill rofi || rofi -show drun -run-command "uwsm app -- {cmd}"
+    pkill rofi || rofi -show drun -run-command "uwsm-app -- {cmd}"
 }
 
 # Use Wofi+UWSM
