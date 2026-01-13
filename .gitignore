@@ -114,9 +114,10 @@ docs/.vitepress/cache
 # devicon
 docs/.vitepress/devicon
 
-ml4w copy/
 dotfiles/.config/hypr/custom_workspaces.conf
 dotfiles/.config/hypr/custom_monitors.conf
 dotfiles/.config/ml4w/settings/launcher
 dotfiles/.config/ml4w/settings/wallpaper_cache
 dotfiles/.config/ml4w/settings/gamemode-enabled
+dotfiles/.config/waybar/themes/moljac024/
+dotfiles/.config/waybar/themes/valebes/
