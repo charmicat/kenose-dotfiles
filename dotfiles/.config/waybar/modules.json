@@ -15,9 +15,9 @@
     "all-outputs": true,
     "format": "{name}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
     "persistent-workspaces": {
       "*": 6
@@ -39,6 +39,20 @@
       "Foot Server": "Terminal",
       ".*(steam_app_[0-9]+).*": "Game"
     }
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "on-click": "flatpak run io.missioncenter.MissionCenter"
+  },
+  "memory": {
+    "format": "  {}%",
+    "on-click": "flatpak run io.missioncenter.MissionCenter"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C",
+    "on-click": "flatpak run io.missioncenter.MissionCenter"
   },
   // Hyprland Window
   "hyprland/window": {
@@ -227,8 +241,6 @@
     "format": "{icon}",
     "tooltip": true,
     "format-icons": {
-      // "activated": "",
-      // "deactivated": ""
       "activated": "●",
       "deactivated": "◌"
     },
@@ -271,9 +283,25 @@
   // Clock
   "clock": {
     "format": "{:%H:%M - %a %Od.%Om.%y}",
+    // "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+    "format-alt": "{:%Y-%m-%d}",
     "on-click": "flatpak run com.ml4w.calendar",
     "timezone": "",
-    "tooltip": false
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+    // "tooltip": false
   },
   // System
   "custom/system": {
@@ -284,14 +312,14 @@
   },
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "/  {usage}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "/  {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
@@ -498,14 +526,6 @@
     "restart-interval": 60,
     "escape": true
   },
-  "custom/adaptive-sync": {
-    "format": "  VRR{} ",
-    "exec-on-event": true,
-    "interval": "once",
-    "exec": "swaymsg -r -t get_outputs | jq '.[0].adaptive_sync_status'",
-    "on-click": "swaymsg output DP-1 adaptive_sync on",
-    "on-click-right": "swaymsg output DP-1 adaptive_sync off"
-  },
   "gamemode": {
     "format": "{glyph}",
     "format-alt": "{glyph} {count}",
@@ -524,5 +544,81 @@
     "format-ok": "✓",
     "system": true, // Monitor failed systemwide units.
     "user": true //  Monitor failed user units.
-  }
+  },
+  "custom/kill_active_window": {
+    "format": "󱎘 ",
+    "on-click": "swaymsg kill",
+    "tooltip": true,
+    "tooltip-format": "Kill focused application"
+  },
+  "custom/prev_workspace": {
+    "format": "󰜱 ",
+    "on-click": "~/.config/sway/bin/sway-ws-nav prev",
+    "tooltip": true,
+    "tooltip-format": "Go to previous workspace"
+  },
+  "custom/next_workspace": {
+    "format": "󰜴 ",
+    "on-click": "~/.config/sway/bin/sway-ws-nav next",
+    "tooltip": true,
+    "tooltip-format": "Go to next workspace"
+  },
+  "custom/floating_toggle": {
+    "format": " ",
+    "on-click": "swaymsg floating toggle",
+    "tooltip": true,
+    "tooltip-format": "Toggle floating of focused application"
+  },
+  "custom/file_manager": {
+    "format": " ",
+    "on-click": "nautilus --new-window",
+    "tooltip": true,
+    "tooltip-format": "Launch file manager"
+  },
+  "custom/app_launcher": {
+    "format": "󰣛 ",
+    "on-click": "~/.config/sway/bin/sway-run",
+    "tooltip": true,
+    "tooltip-format": "Launch application"
+  },
+  "custom/change_wallpaper": {
+    "format": "󱧾 ",
+    "tooltip": true,
+    "tooltip-format": "Change wallpaper",
+    "on-click": "killall -SIGUSR1 swayscape"
+  },
+  "custom/displays": {
+    "format": "󰍹 ",
+    "on-click": "~/.config/sway/bin/sway-displays"
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "on-click": "~/.config/sway/bin/sway-power-menu",
+    "tooltip": true,
+    "tooltip-format": "Power menu"
+  },
+  
+  //SWAY
+  // "sway/mode": {
+  //     "format": "<span style=\"italic\">{}</span>"
+  // },
+  "sway/language": {
+    "format": "{}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+  },
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true
+  },
+  "sway/window": {
+    "on-click-right": "swaymsg floating toggle"
+  },
+  "custom/adaptive-sync": {
+    "format": "  VRR{} ",
+    "exec-on-event": true,
+    "interval": "once",
+    "exec": "swaymsg -r -t get_outputs | jq '.[0].adaptive_sync_status'",
+    "on-click": "swaymsg output DP-1 adaptive_sync on",
+    "on-click-right": "swaymsg output DP-1 adaptive_sync off"
+  },
 }
