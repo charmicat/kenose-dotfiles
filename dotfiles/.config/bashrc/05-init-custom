@@ -15,7 +15,7 @@ if test "x$XDG_DATA_HOME" = "x" ; then
   export XDG_DATA_HOME=$HOME/.local/share
 fi
 
-# moved to 10-aliases
+# moved to 25-custom-aliases
 # source $XDG_CONFIG_HOME/bash/bash_aliases
 
 if [ -d "functions.d" ]; then

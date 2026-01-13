@@ -1,4 +1,5 @@
-local_config = {
+-- colors.lua
+return {
     color1 = '#1a110f',
     color2 = '#A1562A',
     color3 = '#A65D0D',
