@@ -1,8 +1,8 @@
 {
     "palette": {
       "color0": "{{colors.background.default.hex}}",
-      "color1": "",
-      "color2": "",
+      "color1": "{{colors.tertiary.default.hex}}",
+      "color2": "{{colors.secondary.default.hex}}",
       "color3": "",
       "color4": "",
       "color5": "",
@@ -14,7 +14,7 @@
       "color11": "",
       "color12": "",
       "color13": "{{colors.on_primary_fixed.default.hex}}",
-      "color14": "",
+      "color14": "{{colors.on_primary_fixed_variant.default.hex}}",
       "color15": "{{colors.on_surface.default.hex}}"
     }
   }

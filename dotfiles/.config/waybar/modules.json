@@ -545,6 +545,8 @@
     "system": true, // Monitor failed systemwide units.
     "user": true //  Monitor failed user units.
   },
+
+    //SWAY
   "custom/kill_active_window": {
     "format": "󱎘 ",
     "on-click": "swaymsg kill",
@@ -597,8 +599,6 @@
     "tooltip": true,
     "tooltip-format": "Power menu"
   },
-  
-  //SWAY
   // "sway/mode": {
   //     "format": "<span style=\"italic\">{}</span>"
   // },

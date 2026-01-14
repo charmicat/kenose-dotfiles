@@ -79,7 +79,7 @@
   ],
   "console_title_template": "{{if .Root}}(Admin){{end}} {{.PWD}}",
   "transient_prompt": {
-    "foreground": "#B48EAD",
+    "foreground": "p:color15",
     "foreground_templates": [
       "{{ if gt .Code 0 }}#BF616A{{ end }}"
     ],

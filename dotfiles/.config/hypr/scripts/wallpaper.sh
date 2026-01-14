@@ -12,12 +12,16 @@ source "$HOME"/.config/ml4w/library.sh
 # Detect session type
 # -----------------------------------------------------
 WAYPAPER_BACKEND=""
-IS_X11_SESSION=$(echo "$XDG_SESSION_TYPE" | grep -i "x11")
-if [ "$IS_X11_SESSION" -eq 0 ]; then
+IS_X11_SESSION=0
+# IS_X11_SESSION=$(echo "$XDG_SESSION_TYPE" | grep -i "x11") || echo 1
+if [ $(echo "$XDG_SESSION_TYPE" | grep -i "x11") ]; then
     _writeLog "X11 session detected"
     IS_X11_SESSION=1
     WAYPAPER_BACKEND="--backend feh"
+else
+    _writeLog "Session is $XDG_SESSION_TYPE"
 fi
+
 
 # -----------------------------------------------------
 # Check to use wallpaper cache
