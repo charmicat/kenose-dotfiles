@@ -148,7 +148,7 @@
   // Filemanager Launcher
   "custom/filemanager": {
     "format": "",
-    "on-click": "thunar",
+    "on-click": "~/.config/ml4w/settings/filemanager.sh",
     "tooltip": false
   },
   // Browser Launcher
@@ -166,7 +166,7 @@
   // Calculator
   "custom/calculator": {
     "format": "",
-    "on-click": "qalculate-gtk",
+    "on-click": "~/.config/ml4w/settings/calculator.sh",
     "tooltip-format": "Open calculator"
   },
   // Windows VM
@@ -265,12 +265,12 @@
   },
   // System tray
   "tray": {
-    "icon-size": 21,
+    "icon-size": 18,
     "spacing": 10,
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-      "teams-fot-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png"
+      "teams-for-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png"
     }
   },
   // Clock
@@ -289,7 +289,6 @@
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }

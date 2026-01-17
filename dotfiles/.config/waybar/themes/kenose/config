@@ -47,6 +47,7 @@
         // "custom/waybarthemes",
         "custom/exit",
         "idle_inhibitor",
+        "custom/hypridle",
         "clock"
     ]
 }

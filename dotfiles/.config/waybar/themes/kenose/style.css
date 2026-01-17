@@ -15,9 +15,9 @@
 @import '/home/talto/.config/waybar/colors.css';
 
 /* @define-color icon_color #FFFFFF; */
-@define-color icon_color @on_surface;
+@define-color icon_color @surface_bright;
 @define-color border_color @secondary;
-@define-color background @surface;
+@define-color background @surface_container;
 
 /* -----------------------------------------------------
  * General
@@ -57,7 +57,7 @@ window#waybar {
     min-width: 210px;
 }
 
-#workspaces button {
+#workspaces button, #tray {
     padding: 0px 6px;
     margin: 3px 3px;
     border-radius: 8px;
@@ -120,7 +120,7 @@ window#waybar.empty #window {
  * Taskbar
  * ----------------------------------------------------- */
 
-#taskbar {
+#taskbar, #tray {
     background: @primary;
     margin: 3px 15px 3px 0px;
     padding:0px;
@@ -576,7 +576,18 @@ window#waybar.empty #window {
 
 #tray {
     background-color: @background;
-    padding: 0px 15px 0px 0px;
+    font-size: 16px;
+    color: @on_surface;
+    border-radius: 8px;
+    /* padding: 3px 10px 3px 10px; */
+    /* margin: 3px 1px 3px 0px; */
+    transition: all 0.3s ease-out;
+
+    margin: 3px 15px 3px 0px;
+    padding:3px;
+    border-radius: 8px;
+    opacity:1.0;
+    border: 2px solid @border_color;
 }
 
 #tray > .passive {

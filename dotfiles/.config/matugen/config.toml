@@ -210,6 +210,6 @@ output_path = '~/.config/ml4w/colors/onsurface'
 [templates.ohmyposhkenose]
 input_path = '~/.config/matugen/templates/ohmyposh-kenose-colors.json'
 output_path = '~/.config/ohmyposh/colors-kenose.json'
-# post_hook = "jq --slurpfile palette ~/.config/ohmyposh/colors-kenose.json '. + $palette[0]' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
+pre_hook = "oh-my-posh enable reload"
 post_hook = "jq --slurpfile pal ~/.config/ohmyposh/colors-kenose.json '.palette = $pal[0].palette' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
 

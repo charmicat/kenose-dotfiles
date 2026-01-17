@@ -113,7 +113,7 @@ alias codex-oss="codex --oss --profile gpt-oss-20b-ollama "
 # -----------------------------------------------------
 # Gentoo
 # -----------------------------------------------------
-alias remerge_all="emerge --oneshot $(qlist -Iv | awk '{print "="$1}')"
+# alias remerge_all="emerge --oneshot $(qlist -Iv | awk '{print "="$1}')"
 #alias openglati='eselect opengl set 1'
 #alias openglxorg='eselect opengl set 2'
 alias emerge_deep="emerge -uDUav --with-bdeps=y --keep-going @world"
