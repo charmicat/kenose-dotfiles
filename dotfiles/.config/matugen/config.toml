@@ -202,9 +202,14 @@ output_path = '~/.config/ml4w/colors/secondary'
 input_path = '~/.config/matugen/templates/onsurface'
 output_path = '~/.config/ml4w/colors/onsurface'
 
-[templates.ohmyposh]
-input_path = '~/.config/matugen/templates/ohmyposh-colors.json'
-output_path = '~/.config/ohmyposh/colors.json'
+# [templates.ohmyposh]
+# input_path = '~/.config/matugen/templates/ohmyposh-colors.json'
+# output_path = '~/.config/ohmyposh/colors.json'
 # post_hook = "jq --slurpfile palette ~/.config/ohmyposh/colors.json '. + $palette[0]' ~/.config/ohmyposh/EDM115-newline.omp.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/EDM115-newline.omp.json"
-post_hook = "jq --slurpfile palette ~/.config/ohmyposh/colors.json '. + $palette[0]' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
+
+[templates.ohmyposhkenose]
+input_path = '~/.config/matugen/templates/ohmyposh-kenose-colors.json'
+output_path = '~/.config/ohmyposh/colors-kenose.json'
+# post_hook = "jq --slurpfile palette ~/.config/ohmyposh/colors-kenose.json '. + $palette[0]' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
+post_hook = "jq --slurpfile pal ~/.config/ohmyposh/colors-kenose.json '.palette = $pal[0].palette' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
 

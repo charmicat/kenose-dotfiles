@@ -15,6 +15,7 @@
 @import '/home/talto/.config/waybar/colors.css';
 
 /* @define-color icon_color #FFFFFF; */
+@define-color icon_color @on_surface;
 @define-color border_color @secondary;
 @define-color background @surface;
 
@@ -137,7 +138,7 @@ window#waybar.empty #window {
 }
 
 #taskbar button:hover {
-    background: alpha(#ffffff,0.1);
+    background: alpha(#ffffff,0.5);
     box-shadow: none;
 }
 
@@ -201,6 +202,7 @@ window#waybar.empty #window {
 #custom-quicklink_calculator,
 #custom-quicklink_pamac_manager,
 #custom-quicklink_openai,
+#custom-quicklink_chatgpt,
 #custom-waybarthemes {
     margin-right: 15px;
     font-size: 20px;
@@ -267,7 +269,7 @@ window#waybar.empty #window {
  * App Launcher
  * ----------------------------------------------------- */
 
-#custom-appmenu {
+#custom-appmenu, #custom-appmenuicon {
     background-color: @background;
     font-size: 16px;
     color: @on_surface;
@@ -278,27 +280,15 @@ window#waybar.empty #window {
     transition: all 0.3s ease-out;    
 }
 
-#custom-appmenu:hover {
+#custom-appmenu:hover, #custom-appmenuicon:hover {
     color: @on_surface;
     background: @primary_container;
     border-color: @primary;
 }
 
 #custom-appmenuicon {
-    background-color: @background;
     font-size: 18px;
-    color: @on_surface;
-    border-radius: 8px;
-    padding: 3px 10px 3px 10px;
     margin: 0px 10px 0px 0px;
-    border: 2px solid @border_color;
-    transition: all 0.3s ease-out;
-}
-
-#custom-appmenuicon:hover {
-    color: @on_surface;
-    background: @primary_container;
-    border-color: @primary;
 }
 
 /* -----------------------------------------------------
@@ -491,7 +481,7 @@ window#waybar.empty #window {
     padding: 2px 10px 0px 10px;
     margin: 3px 10px 3px 0px;
     border: 2px solid @border_color;
-    transition: all 0.3s ease-out;    
+    transition: all 0.3s ease-out;
 }
 
 #network.ethernet:hover {
@@ -585,6 +575,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
+    background-color: @background;
     padding: 0px 15px 0px 0px;
 }
 

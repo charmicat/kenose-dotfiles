@@ -5,8 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          // "foreground": "#E5C07B",
-          "foreground": "{{colors.secondary.default.hex}}",
+          "foreground": "#E5C07B",
           "options": {
             "time_format": "15:04:05"
           },
@@ -15,27 +14,22 @@
           "type": "time"
         },
         {
-          // "foreground": "#B5B50D",
-          "foreground": "{{colors.secondary.default.hex}}",
+          "foreground": "#B5B50D",
           "style": "plain",
           "template": " \uf0e7 ",
           "type": "root"
         },
         {
-          // "foreground": "#61AFEF",
-          "foreground": "{{colors.on_surface.default.hex}}",
-          "background": "{{colors.on_primary_fixed.default.hex}}",
+          "foreground": "#61AFEF",
           "options": {
             "style": "agnoster"
           },
           "style": "plain",
-          // "template": " {{ .Path }} on",
-          "template": " {{ .PWD }} on",
+          "template": " {{ .Path }} on",
           "type": "path"
         },
         {
-          // "foreground": "#F3C267",
-          "background": "{{colors.on_primary_fixed.default.hex}}",
+          "foreground": "#F3C267",
           "options": {
             "branch_gone_icon": "\u274e",
             "branch_identical_icon": "\uf14a"
@@ -45,15 +39,13 @@
           "type": "git"
         },
         {
-          // "foreground": "#C94A16",
-          "foreground": "{{colors.on_surface.default.hex}}",
+          "foreground": "#C94A16",
           "style": "plain",
           "template": "x{{ reason .Code }} ",
           "type": "status"
         },
         {
-          // "foreground": "#E06C75",
-          "foreground": "{{colors.surface.default.hex}}",
+          "foreground": "#E06C75",
           "style": "plain",
           "template": " \u276f ",
           "type": "text"

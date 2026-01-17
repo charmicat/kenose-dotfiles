@@ -1,60 +1,103 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "bg": "#000000",
+    "fg": "#ffffff",
+    "fg_muted": "#888888",
+    "accent": "#ffffff",
+    "accent2": "#ffffff",
+    "accent3": "#ffffff",
+    "error": "#ff0000"
+  },
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "foreground": "p:color2",
+          "type": "time",
+          "style": "plain",
+          "foreground": "p:fg_muted",
+          "template": "[{{ .CurrentDate | date .Format }}]",
           "options": {
             "time_format": "15:04:05"
-          },
-          "style": "plain",
-          "template": "[{{ .CurrentDate | date .Format }}]",
-          "type": "time"
+          }
         },
         {
-          "foreground": "p:color2",
+          "type": "text",
           "style": "plain",
-          "template": " \uf0e7 ",
-          "type": "root"
+          "foreground": "p:fg",
+          "template": " "
         },
         {
-          "foreground": "p:color15",
-          "background": "p:color13",
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:accent2",
+          "template": "{{ .HostName }}"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "p:accent",
+          "template": "{{ .PWD }}",
           "options": {
             "style": "agnoster"
-          },
-          "style": "plain",
-          // "template": " {{ .Path }} on",
-          "template": " {{ .PWD }} on",
-          "type": "path"
+          }
         },
         {
-          "background": "p:color13",
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:accent3",
+          "template": " {{ .HEAD }}",
           "options": {
-            "branch_gone_icon": "\u274e",
-            "branch_identical_icon": "\uf14a"
-          },
-          "style": "plain",
-          "template": " {{ .HEAD }} ",
-          "type": "git"
+            "branch_gone_icon": "✎",
+            "branch_identical_icon": "✓"
+          }
         },
         {
-          "foreground": "p:color15",
+          "type": "status",
           "style": "plain",
-          "template": "x{{ reason .Code }} ",
-          "type": "status"
+          "foreground": "p:error",
+          "template": " x{{ reason .Code }} ",
+          "options": {
+            "display_exit_code": true,
+            "always_enabled": false
+          }
         },
         {
-          "foreground": "p:color15",
+          "type": "root",
           "style": "plain",
-          "template": " \u276f ",
-          "type": "text"
+          "foreground": "p:error",
+          "template": " \uf0e7 "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg_muted",
+          "template": " \\$ "
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffd43b",
+          "background": "#306998",
+          "template": "  {{ .Full }} "
         }
-      ],
-      "type": "prompt"
-    }
+      ]
+    },
   ],
+  "debug_prompt": {
+    "background": "transparent",
+    "foreground": "#ffffff",
+    "template": "Debugging "
+  },
+  "final_space": true,
   "version": 4
 }

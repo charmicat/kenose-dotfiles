@@ -37,16 +37,9 @@
     "rewrite": {
       "Firefox Web Browser": "Firefox",
       "Foot Server": "Terminal",
-      ".*(steam_app_[0-9]+).*": "Game"
+      ".*(steam_app_[0-9]+).*": "Game",
+      ".*Remmina.*": "Remmina"
     }
-  },
-  "cpu": {
-    "format": "  {usage}%",
-    "on-click": "flatpak run io.missioncenter.MissionCenter"
-  },
-  "memory": {
-    "format": "  {}%",
-    "on-click": "flatpak run io.missioncenter.MissionCenter"
   },
   "temperature": {
     "critical-threshold": 80,
@@ -315,12 +308,14 @@
     "format": "/  {usage}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
     "on-scroll-up": "true",
-    "on-scroll-down": "true"
+    "on-scroll-down": "true",
+    "on-left-click": "flatpak run io.missioncenter.MissionCenter"
   },
   // Memory
   "memory": {
     "format": "/  {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
+    "on-left-click": "flatpak run io.missioncenter.MissionCenter",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },
@@ -620,5 +615,5 @@
     "exec": "swaymsg -r -t get_outputs | jq '.[0].adaptive_sync_status'",
     "on-click": "swaymsg output DP-1 adaptive_sync on",
     "on-click-right": "swaymsg output DP-1 adaptive_sync off"
-  },
+  }
 }
