@@ -97,9 +97,9 @@ post_hook = 'echo "after gen"'
 # Blend is set to true by default. 
 # [config.custom_colors]
 # red = "#ff0000"
-# blue = { color = "#0000ff", blend = false }
-# green = { color = "#00FF00", blend = false }
-
+# blue = { color = "#0000ff" }
+# green = { color = "#00FF00" }
+# yellow = { color = "#ffff00"}
 
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
@@ -113,7 +113,7 @@ post_hook = 'sed -i "s|-- EOF|-- EOF|" ~/.config/conky/conky.lua'
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
-post_hook = 'dunstctl reload'
+post_hook = 'pidof dunst && dunstctl reload'
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
@@ -146,12 +146,12 @@ output_path = '~/.config/gtk-4.0/colors.css'
 [templates.i3]
 input_path = '~/.config/matugen/templates/i3-colors.conf'
 output_path = '~/.config/i3/conf.d/01-colors.conf'
-post_hook = 'i3-msg reload'
+post_hook = 'pidof i3 && i3-msg reload'
 
 [templates.i3status]
 input_path = '~/.config/matugen/templates/i3status-colors.conf'
 output_path = '~/.config/i3status/config'
-post_hook = 'i3-msg reload'
+post_hook = 'pidof i3 && i3-msg reload'
 
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
@@ -176,7 +176,7 @@ output_path = '~/.config/swaync/colors.css'
 [templates.sway]
 input_path = '~/.config/matugen/templates/sway-colors.conf'
 output_path = '~/.config/sway/conf.d/01-colors.conf'
-post_hook = 'swaymsg reload'
+post_hook = 'pidof sway && swaymsg reload'
 
 [templates.walker]
 input_path = '~/.config/matugen/templates/colors.css'

@@ -147,22 +147,29 @@ THEME_PREF=$(grep -E '^gtk-application-prefer-dark-theme=' "$SETTINGS_FILE" | aw
 # -----------------------------------------------------
 # Execute matugen
 # -----------------------------------------------------
+theme_luminance="light"
+if [ "$THEME_PREF" -eq 1 ]; then
+    theme_luminance="dark"
+fi
 
 _writeLog "Execute matugen with $used_wallpaper"
-if [ "$THEME_PREF" -eq 1 ]; then
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark" --show-colors -v 
-else
-    "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light" --show-colors -v
-fi
+"$HOME"/.local/bin/matugen image "$used_wallpaper" -m "$theme_luminance" --show-colors -v 
+
+
+# if [ "$THEME_PREF" -eq 1 ]; then
+#     "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "dark" --show-colors -v 
+# else
+#     "$HOME"/.local/bin/matugen image "$used_wallpaper" -m "light" --show-colors -v
+# fi
 
 if [ "$IS_X11_SESSION" -eq 1 ]; then
     i3-msg reload;
-    notify-send "WTF" "X11 Session detected, reloading i3 config"
+    notify-send "NOTICE" "X11 Session detected, reloading i3 config"
 else
     # -----------------------------------------------------
     # Reload Waybar
     # -----------------------------------------------------
-    notify-send "WTF" "Wayland Session detected, reloading hyperland config"
+    notify-send "NOTICE" "Wayland Session detected, reloading hyprland config"
     sleep 1
     "$HOME"/.config/waybar/launch.sh
 

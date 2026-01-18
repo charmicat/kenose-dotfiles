@@ -123,3 +123,4 @@ dotfiles/.sync_running
 dotfiles/.config/dunst/dunstrc copy
 dotfiles/.config/dunst/dunstrc-colors
 dotfiles/.config/dunst/dunstrc.orig
+dotfiles/.config/matugen/templates/dunstrc-colors copy

@@ -1,28 +1,11 @@
 {
   "palette": {
-    // base
-    "bg": "#0e1416",
-    "fg": "#dee3e5",
-    "fg_muted": "#bfc8ca",
-
-    // primary accent
-    "accent": "#83d3e3",
-    "accent_bg": "#004e59",
-    "accent_fg": "#a0efff",
-
-    // secondary accent
-    "accent2": "#b1cbd1",
-    "accent2_bg": "#334a50",
-    "accent2_fg": "#cde7ed",
-
-    // tertiary (optional extra accent)
-    "accent3": "#bcc5eb",
-    "accent3_bg": "#3c4665",
-    "accent3_fg": "#dbe1ff",
-
-    // error / status
+    "fg": "#f1dfd9",
+    "fg_muted": "#d8c2bb",
+    "accent": "#ffb599",
+    "accent2": "#e7beaf",
+    "accent3": "#d4c78e",
     "error": "#ffb4ab",
-    "error_bg": "#93000a",
-    "error_fg": "#ffdad6"
+    "source": "#b39c94"
   }
 }

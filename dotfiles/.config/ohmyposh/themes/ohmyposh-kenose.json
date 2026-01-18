@@ -114,7 +114,7 @@
           "style": "plain",
           "foreground": "p:fg_muted",
           "template": " \\$ "
-        },
+        }
       ]
     }
   ],
