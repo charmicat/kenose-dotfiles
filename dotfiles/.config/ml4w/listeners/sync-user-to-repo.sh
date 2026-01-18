@@ -17,6 +17,12 @@ fi
 SOURCE_DIR=${1:-"/home/talto/.mydotfiles/com.ml4w.kenose-dotfiles.dev/.config"}
 TARGET_DIR=${2:-"/home/talto/workspace/com.ml4w.kenose-dotfiles/dotfiles/.config"}
 
+if [ -f "$SOURCE_DIR/.sync_running" ]; then
+    _writeLog ":: Another sync process is already running for source directory: $SOURCE_DIR"
+    _writeLog ":: Exiting to prevent conflicts."
+    exit 1
+fi
+
 # Configuration
 if [ ! -d "$SOURCE_DIR" ]; then
     _writeLog ":: Error: Source directory argument invalid ($SOURCE_DIR)"
@@ -28,7 +34,7 @@ if [ ! -d "$TARGET_DIR" ]; then
 fi
 
 # EVENTS="modify,create,delete,move"
-EVENTS="modify,create"
+EVENTS="modify,create,moved_to"
 EXCLUDE_FILE="$SCRIPT_DIR/protected.txt"
 
 echo ":: Source: $SOURCE_DIR"
@@ -60,7 +66,7 @@ while true; do
     fi
 
     if [ -n "$DRY_RUN_FLAG" ]; then
-        echo :: rsync command: $RSYNC_CMD "$SOURCE_DIR/" "$TARGET_DIR"
+        echo :: rsync command: "$RSYNC_CMD" "$SOURCE_DIR/" "$TARGET_DIR"
         echo
     fi
 

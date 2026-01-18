@@ -58,6 +58,9 @@ echo ":: Target: $TARGET_DIR"
 echo
 echo ":: Starting Folder Sync Daemon for $project_name"
 
+touch $SOURCE_DIR/.sync_running
+echo ":: Created lock file at $SOURCE_DIR/.sync_running"
+
 # --- Daemon Loop ---
 
 # Daemon will only run if NOT in dry-run mode, but the sync logic is tested
@@ -97,5 +100,7 @@ while true; do
     echo
     echo ":: Sync successful. Returning to monitor mode."
 done
+
+rm $SOURCE_DIR/.sync_running
 
 exit 0

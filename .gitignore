@@ -119,3 +119,4 @@ dotfiles/.config/hypr/custom_monitors.conf
 dotfiles/.config/ml4w/settings/launcher
 dotfiles/.config/ml4w/settings/wallpaper_cache
 dotfiles/.config/ml4w/settings/gamemode-enabled
+dotfiles/.sync_running
