@@ -55,7 +55,8 @@ export IFS_LB=$'\n'
 export HISTFILE="$XDG_DATA_HOME/bashrc/history" #something is overriding bash_history with history, forcing history then
 export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 
-#PS1 created using https://bash-prompt-generator.org/, output: [20:14:47] hostname ~/bin $█
+#PS1 created using https://bash-prompt-generator.org/, output: [20:14:47] hostname ~/bin $
+# using oh-my-posh now, probably meaningless
 # time_color="38;5;2m"
 time_color="38;5;202;1m"
 address_color="38;5;208;1m"

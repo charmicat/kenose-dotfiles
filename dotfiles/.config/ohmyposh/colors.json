@@ -1,28 +1,20 @@
 {
-  "palette": {
-    // base
-    "bg": "#0e1416",
-    "fg": "#dee3e5",
-    "fg_muted": "#bfc8ca",
-
-    // primary accent
-    "accent": "#83d3e3",
-    "accent_bg": "#004e59",
-    "accent_fg": "#a0efff",
-
-    // secondary accent
-    "accent2": "#b1cbd1",
-    "accent2_bg": "#334a50",
-    "accent2_fg": "#cde7ed",
-
-    // tertiary (optional extra accent)
-    "accent3": "#bcc5eb",
-    "accent3_bg": "#3c4665",
-    "accent3_fg": "#dbe1ff",
-
-    // error / status
-    "error": "#ffb4ab",
-    "error_bg": "#93000a",
-    "error_fg": "#ffdad6"
+    "palette": {
+      "color0": "#1a110f",
+      "color1": "#A1562A",
+      "color2": "#A65D0D",
+      "color3": "#866A4A",
+      "color4": "",
+      "color5": "",
+      "color6": "",
+      "color7": "",
+      "color8": "",
+      "color9": "",
+      "color10": "#ffb59d",
+      "color11": "",
+      "color12": "",
+      "color13": "#390c00",
+      "color14": "",
+      "color15": "#f1dfda"
+    }
   }
-}

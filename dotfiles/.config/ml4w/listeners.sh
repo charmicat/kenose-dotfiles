@@ -6,6 +6,7 @@
 # Define an associative array to store listener names and their full paths.
 # Add more listeners here as needed, following the format:
 # LISTENERS["short-name"]="full/path/to/script.sh"
+
 declare -A LISTENERS
 LISTENERS["gtk-theme-switcher"]="$HOME/.config/ml4w/listeners/gtk-theme-switcher.sh"
 LISTENERS["low-bat-notification"]="$HOME/.config/ml4w/listeners/low-bat-notification.sh"
