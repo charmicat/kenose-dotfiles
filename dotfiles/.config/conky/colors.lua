@@ -1,16 +1,15 @@
--- colors.lua
-return {
-    color1 = '#1a110f',
-    color2 = '#A1562A',
-    color3 = '#A65D0D',
-    color4 = '#866A4A',
-    color5 = '#ffb59d',
-    color6 = '#390c00',
-    color7 = '#f1dfda',
-    color8 = '{{colors.primary.default.hex}}',
-    color9 = '{{colors.tertiary.default.hex}}',
-    default_color = '#ffb59d',
-    default_shade_color = '#390c00',
-    default_outline_color = '#f1dfda',
-    own_window_colour = '#1a110f'
+local_config = {
+    color1 = '#f1dfd9',
+    color2 = '#1a110e',
+    color3 = '#d8c2bb',
+    color4 = '#271e1a',
+    color5 = '#552009',
+    color6 = '#1a110e',
+    color7 = '#1a110e',
+    color8 = '#ffb599',
+    color9 = '#d4c78e',
+    default_color = '#ffb599',
+    default_shade_color = '#370e00',
+    default_outline_color = '#f1dfd9',
+    own_window_colour = '#1a110e'
 }

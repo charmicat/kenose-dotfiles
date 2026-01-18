@@ -120,3 +120,6 @@ dotfiles/.config/ml4w/settings/launcher
 dotfiles/.config/ml4w/settings/wallpaper_cache
 dotfiles/.config/ml4w/settings/gamemode-enabled
 dotfiles/.sync_running
+dotfiles/.config/dunst/dunstrc copy
+dotfiles/.config/dunst/dunstrc-colors
+dotfiles/.config/dunst/dunstrc.orig
