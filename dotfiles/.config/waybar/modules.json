@@ -265,12 +265,13 @@
   },
   // System tray
   "tray": {
-    "icon-size": 18,
+    "icon-size": 16,
     "spacing": 10,
     "icons": {
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-      "teams-for-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png"
+      "teams-for-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png",
+      "Bitwarden": "/usr/share/swcatalog/icons/archlinux-arch-extra/48x48/bitwarden_bitwarden.png"
     }
   },
   // Clock

@@ -44,10 +44,7 @@ block_postfix = "*>"
 # For example, killing the wallpaper daemon. Usage is like a normal hook.
 # pre_hook = ""
 
-# [templates.includeme]
-# input_path = "./include.txt"
-# The output path is optional if you just want to import the template anyways,
-# output_path = "./a/include.txt"
+
 
 # [templates.name1]
 # Relative paths will be resolved from the path `config.toml` is in.
@@ -62,10 +59,13 @@ block_postfix = "*>"
 # Relative paths will be resolved from the path `config.toml` is in.
 # input_path = "./error-testing.txt"
 # output_path = "./a/error-testing.txt"
-
 # This will use a different input path depending on what mode you use.
 # input_path_modes = { dark = "./colors.whatever-extension", light = "./colors.whatever-extension" }
 
+[templates.includeme]
+input_path = "~/.config/matugen/templates/colors.css"
+# The output path is optional if you just want to import the template anyways,
+output_path = "/var/tmp/color.css"
 # This will compare all of the colors inside the array with the color you set as `compare_to`, and returns the closest color to it.
 # You can then use `{{closest_color}}` inside templates and hooks.
 colors_to_compare = [
@@ -84,13 +84,12 @@ colors_to_compare = [
     { name = "purple", color = "#800080" },
 ]
 compare_to = "{{colors.primary.default.hex}}"
-
 # Runs before the template is exported. You can use keywords here.
 # If you want the command to be async, add an & symbol to the end of the command on unix.
-pre_hook = 'echo "source color {{colors.source_color.default.hex}}, source image {{image}}, closest color {{closest_color}}"'
+pre_hook = 'notify-send "NOTICE" "source color {{colors.source_color.default.hex}}, source image {{image}}, closest color {{closest_color}}"'
 # Runs after the template is exported. You can use keywords here.
 # If you want the command to be async, add an & symbol to the end of the command on unix.
-post_hook = 'echo "after gen"'
+post_hook = 'logger "after gen"'
 
 # Only hex values
 # https://m3.material.io/styles/color/advanced/adjust-existing-colors#1cc12e43-237b-45b9-8fe0-9a3549c1f61e
@@ -119,11 +118,6 @@ post_hook = 'pidof dunst && dunstctl reload'
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/colors-matugen.conf'
 # post_hook = 'pkill -SIGUSR1 kitty'
-
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
-post_hook = 'hyprctl reload'
 
 [templates.waybar]
 input_path = '~/.config/matugen/templates/colors.css'
@@ -212,4 +206,9 @@ input_path = '~/.config/matugen/templates/ohmyposh-kenose-colors.json'
 output_path = '~/.config/ohmyposh/colors-kenose.json'
 pre_hook = "oh-my-posh enable reload"
 post_hook = "jq --slurpfile pal ~/.config/ohmyposh/colors-kenose.json '.palette = $pal[0].palette' ~/.config/ohmyposh/themes/ohmyposh-kenose.json > /tmp/new_theme.json && mv /tmp/new_theme.json ~/.config/ohmyposh/themes/ohmyposh-kenose.json"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
 
