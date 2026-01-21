@@ -281,7 +281,7 @@
     },
     {
         "key": "xwayland:force_zero_scaling",
-        "value": "true"
+        "value": "false"
     },
     {
         "key": "opengl:nvidia_anti_flicker",

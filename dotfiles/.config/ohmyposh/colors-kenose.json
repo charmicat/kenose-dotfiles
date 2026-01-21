@@ -1,11 +1,11 @@
 {
   "palette": {
-    "fg": "#eae1d4",
-    "fg_muted": "#cfc5b4",
-    "accent": "#e3c46d",
-    "accent2": "#d5c5a1",
-    "accent3": "#adcfae",
+    "fg": "#e2e2e9",
+    "fg_muted": "#c4c6d0",
+    "accent": "#adc6ff",
+    "accent2": "#bfc6dc",
+    "accent3": "#debcdf",
     "error": "#ffb4ab",
-    "source": "#b3ab9c"
+    "source": "#4285f4"
   }
 }

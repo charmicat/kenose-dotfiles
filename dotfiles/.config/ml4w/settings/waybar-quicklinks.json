@@ -70,7 +70,7 @@ Add your quicklinks in your desired order to the status bar
             "custom/quicklink_firefox",
             "custom/quicklink_filemanager",
             "custom/quicklink_pamac_manager",
-            "custom/spacer",
+            // "custom/spacer",
             "custom/quicklink_chatgpt",
             /*
 Don't remove the quicklinkempty

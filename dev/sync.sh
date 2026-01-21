@@ -58,8 +58,8 @@ echo ":: Target: $TARGET_DIR"
 echo
 echo ":: Starting Folder Sync Daemon for $project_name"
 
-touch $SOURCE_DIR/.sync_running
-echo ":: Created lock file at $SOURCE_DIR/.sync_running"
+touch $TARGET_DIR/.sync_running
+echo ":: Created lock file at $TARGET_DIR/.sync_running"
 
 # --- Daemon Loop ---
 

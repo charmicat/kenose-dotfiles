@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "fg": "#eae1d4",
-    "fg_muted": "#cfc5b4",
-    "accent": "#e3c46d",
-    "accent2": "#d5c5a1",
-    "accent3": "#adcfae",
+    "fg": "#e2e2e9",
+    "fg_muted": "#c4c6d0",
+    "accent": "#adc6ff",
+    "accent2": "#bfc6dc",
+    "accent3": "#debcdf",
     "error": "#ffb4ab",
-    "source": "#b3ab9c"
+    "source": "#4285f4"
   },
   "blocks": [
     {
@@ -47,7 +47,7 @@
           "type": "text",
           "style": "plain",
           "foreground": "p:accent2",
-          "template": "{{ .HostName }}"
+          "template": " {{ .HostName }}"
         },
         {
           "type": "text",
@@ -94,7 +94,7 @@
           "type": "path",
           "style": "plain",
           "foreground": "p:accent",
-          "template": "{{ .PWD }}",
+          "template": " {{ .PWD }}",
           "options": {
             "style": "agnoster"
           }
@@ -125,7 +125,7 @@
           "type": "status",
           "style": "plain",
           "foreground": "p:error",
-          "template": " x{{ reason .Code }} ",
+          "template": " x{{ reason .Code }}",
           "options": {
             "display_exit_code": true,
             "always_enabled": false
@@ -149,7 +149,7 @@
           "type": "text",
           "style": "plain",
           "foreground": "p:fg_muted",
-          "template": " \\$ "
+          "template": " $"
         }
       ]
     }

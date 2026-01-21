@@ -83,7 +83,7 @@ colors_to_compare = [
     { name = "fuchsia", color = "#ff00ff" },
     { name = "purple", color = "#800080" },
 ]
-compare_to = "{{colors.primary.default.hex}}"
+compare_to = "{{colors.source_color.default.hex}}"
 # Runs before the template is exported. You can use keywords here.
 # If you want the command to be async, add an & symbol to the end of the command on unix.
 pre_hook = 'notify-send "NOTICE" "source color {{colors.source_color.default.hex}}, source image {{image}}, closest color {{closest_color}}"'
