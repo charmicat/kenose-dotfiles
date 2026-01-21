@@ -49,7 +49,7 @@
     },
     {
         "key": "decoration:inactive_opacity",
-        "value": 0.7
+        "value": 0.9
     },
     {
         "key": "decoration:fullscreen_opacity",
@@ -57,7 +57,7 @@
     },
     {
         "key": "decoration:shadow:enabled",
-        "value": false
+        "value": "false"
     },
     {
         "key": "decoration:dim_inactive",
@@ -173,7 +173,7 @@
     },
     {
         "key": "misc:vrr",
-        "value": 0
+        "value": 2
     },
     {
         "key": "misc:mouse_move_enables_dpms",
@@ -185,7 +185,7 @@
     },
     {
         "key": "misc:always_follow_on_dnd",
-        "value": false
+        "value": "true"
     },
     {
         "key": "misc:layers_hog_keyboard_focus",
@@ -221,7 +221,7 @@
     },
     {
         "key": "misc:initial_workspace_tracking",
-        "value": 0
+        "value": 2
     },
     {
         "key": "misc:middle_click_paste",
@@ -281,7 +281,7 @@
     },
     {
         "key": "xwayland:force_zero_scaling",
-        "value": false
+        "value": "true"
     },
     {
         "key": "opengl:nvidia_anti_flicker",
@@ -365,7 +365,7 @@
     },
     {
         "key": "dwindle:smart_resizing",
-        "value": false
+        "value": "true"
     },
     {
         "key": "master:allow_small_split",

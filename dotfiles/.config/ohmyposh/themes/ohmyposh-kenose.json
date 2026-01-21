@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "bg": "#000000",
-    "fg": "#ffffff",
-    "fg_muted": "#888888",
-    "accent": "#ffffff",
-    "accent2": "#ffffff",
-    "accent3": "#ffffff",
-    "error": "#ff0000"
+    "fg": "#eae1d4",
+    "fg_muted": "#cfc5b4",
+    "accent": "#e3c46d",
+    "accent2": "#d5c5a1",
+    "accent3": "#adcfae",
+    "error": "#ffb4ab",
+    "source": "#b3ab9c"
   },
   "blocks": [
     {
@@ -40,6 +40,12 @@
         {
           "type": "text",
           "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
+        },
+        {
+          "type": "text",
+          "style": "plain",
           "foreground": "p:accent2",
           "template": "{{ .HostName }}"
         },
@@ -56,11 +62,17 @@
           "foreground": "p:accent",
           "background": "p:accent2",
           "options": {
-            "prefix": " \uE235 ",
+            "prefix": "  ",
             "display_version": true,
             "display_virtual_env": true,
             "display_mode": "context"
           }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
         },
         {
           "type": "svn",
@@ -73,6 +85,12 @@
           }
         },
         {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
+        },
+        {
           "type": "path",
           "style": "plain",
           "foreground": "p:accent",
@@ -80,6 +98,12 @@
           "options": {
             "style": "agnoster"
           }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
         },
         {
           "type": "git",
@@ -92,6 +116,12 @@
           }
         },
         {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
+        },
+        {
           "type": "status",
           "style": "plain",
           "foreground": "p:error",
@@ -102,10 +132,16 @@
           }
         },
         {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:fg",
+          "template": " "
+        },
+        {
           "type": "root",
           "style": "plain",
           "foreground": "p:error",
-          "template": " \uf0e7 ",
+          "template": "  ",
           "powerline_symbol": "",
           "background": "p:accent2"
         },
