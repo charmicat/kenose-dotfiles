@@ -1,7 +1,8 @@
 @import '../../colors.css';
 
 /* === Derived dynamic colors === */
-@define-color base alpha(@surface, 0.5);                      /* translucent blurred base */
+/* @define-color base alpha(@surface, 0.5);                      translucent blurred base */
+@define-color base @surface;
 @define-color surface_custom alpha(@surface_container_high,0.8);
 @define-color hovercolor alpha(@surface_container_high,0.8);
 @define-color activecolor @primary_container;

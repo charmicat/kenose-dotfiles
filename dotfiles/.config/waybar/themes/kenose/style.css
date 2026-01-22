@@ -15,7 +15,7 @@
 @import '/home/talto/.config/waybar/colors.css';
 
 /* @define-color icon_color #FFFFFF; */
-@define-color icon_color @surface_bright;
+@define-color icon_color @inverse_on_surface;
 @define-color border_color @secondary;
 @define-color background @surface_container;
 
@@ -55,6 +55,16 @@ window#waybar {
 #workspaces {
     margin: 0px 7px 0px 0px;
     min-width: 210px;
+}
+
+#group_quicklinks {
+    padding: 0px 6px;
+    margin: 3px 3px;
+    border-radius: 8px;
+    color: @on_surface;
+    background-color: @background;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid @primary;
 }
 
 #workspaces button, #tray {
