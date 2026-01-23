@@ -7,7 +7,7 @@
             "shadow": {
                 "offset": 0
             },
-            "position": "bottom", // "top" | "bottom"
+            "position": "top", // "top" | "bottom"
             "separator": true,
             // modules to show in start, center, and end of bar.
             // available options: "launcher", "workspace", "time", "notification", "network_speed", "quicksetting"
