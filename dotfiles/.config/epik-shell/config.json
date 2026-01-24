@@ -15,11 +15,10 @@
                 "launcher",
                 "workspace"
             ],
-            "center": [
-                "time",
-                "notification"
-            ],
+            "center": [],
             "end": [
+                "time",
+                "notification",
                 "network_speed",
                 "quicksetting"
             ]
