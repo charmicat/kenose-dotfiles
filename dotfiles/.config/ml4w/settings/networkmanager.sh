@@ -1,1 +1,1 @@
-$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e nm-connection-editor
+nm-connection-editor
