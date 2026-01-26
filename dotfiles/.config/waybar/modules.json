@@ -277,7 +277,8 @@
       "blueman": "bluetooth",
       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
       "teams-for-linux": "/usr/share/icons/hicolor/16x16/apps/teams-for-linux.png",
-      "Bitwarden": "/usr/share/swcatalog/icons/archlinux-arch-extra/48x48/bitwarden_bitwarden.png"
+      "Bitwarden": "/usr/share/swcatalog/icons/archlinux-arch-extra/48x48/bitwarden_bitwarden.png",
+      "pamac-manager": "/usr/share/icons/Sardi-Orb-Colora/scalable/apps/pamac.svg"
     }
   },
   // Clock
@@ -315,13 +316,13 @@
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
     "on-scroll-up": "true",
     "on-scroll-down": "true",
-    "on-left-click": "flatpak run io.missioncenter.MissionCenter"
+    // "on-click-right": "flatpak run io.missioncenter.MissionCenter"
   },
   // Memory
   "memory": {
     "format": "/  {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh",
-    "on-left-click": "flatpak run io.missioncenter.MissionCenter",
+    // "on-click-right": "flatpak run io.missioncenter.MissionCenter",
     "on-scroll-up": "true",
     "on-scroll-down": "true"
   },

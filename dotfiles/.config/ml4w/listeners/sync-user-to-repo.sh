@@ -30,13 +30,18 @@ while getopts "s:t:n" opt; do
 done
 
 
-SOURCE_DIR=${_SOURCE_DIR:-"/home/talto/.mydotfiles/com.ml4w.kenose-dotfiles.dev/.config"}
-TARGET_DIR=${_TARGET_DIR:-"/home/talto/workspace/com.ml4w.kenose-dotfiles/dotfiles/.config"}
+SOURCE_DIR=${_SOURCE_DIR:-"/home/talto/.mydotfiles/com.ml4w.kenose-dotfiles.dev/"}
+TARGET_DIR=${_TARGET_DIR:-"/home/talto/workspace/com.ml4w.kenose-dotfiles/dotfiles/"}
 
 if [ -f "$SOURCE_DIR/.sync_running" ]; then
     _writeLog "Another sync process is already running for source directory: $SOURCE_DIR"
-    _writeLog "Exiting to prevent conflicts."
-    exit 1
+
+    if [ -n "$DRY_RUN_FLAG" ]; then
+        _writeLog "DRY RUN: Would exit to prevent conflicts, but continuing due to dry run mode [$DRY_RUN_FLAG]."
+    else
+        _writeLog "Exiting to prevent conflicts."
+        exit 1
+    fi
 fi
 
 # Configuration
