@@ -7,7 +7,7 @@
 	"homepage": "https://github.com/charmicat/kenose-dotfiles",
 	"dependencies": "https://mylinuxforwork.github.io/dotfiles/getting-started/dependencies",
 	"source": "https://github.com/charmicat/kenose-dotfiles.git",
-	"tag": "0.0.0.1",
+	"tag": "0.0.0.1b",
 	"subfolder": "dotfiles",
 	"setupscript": "setup/setup.sh",
 	"restore": [

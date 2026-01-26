@@ -133,11 +133,17 @@
     "on-click": "sleep 0.1 && flatpak run com.ml4w.settings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
-  // Settings
+  // Services manager
   "custom/services": {
     "format": "",
     "on-click": "sleep 0.1 && uuctl",
     "tooltip-format": "Manage services"
+  },
+
+    "custom/dotfiles-installer": {
+    "format": "",
+    "on-click": "sleep 0.1 && flatpak run com.ml4w.dotfilesinstaller",
+    "tooltip-format": "ML4w dotfilesinstaller"
   },
   // Keybindings
   "custom/keybindings": {
@@ -380,12 +386,14 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": true
+      "transition-left-to-right": false
+      // "transition-left-to-right": true
     },
     "modules": [
       "custom/settings",
       "custom/waybarthemes",
       "custom/wallpaper",
+      "custom/dotfiles-installer",
       "custom/services"
     ]
   },
