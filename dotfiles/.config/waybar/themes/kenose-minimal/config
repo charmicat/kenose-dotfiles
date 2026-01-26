@@ -1,4 +1,4 @@
-// Waybar Configuration for kenose Theme
+// Waybar Configuration for kenose minimal Theme
 {
     // General Settings
     "layer": "top", // Waybar at top layer
@@ -17,7 +17,9 @@
     ],
     // Choose the order of the modules
     "modules-left": [
-        "custom/appmenu",
+        // "custom/appmenu",
+        "user",
+        "custom/appmenuicon",
         "hyprland/workspaces",
         "wlr/taskbar",
         // "group/quicklinks",
@@ -31,10 +33,10 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
-        // "backlight",
+        "backlight",
         "bluetooth",
         "network",
-        // "battery",
+        "battery",
         "group/hardware",
         "group/tools",
         // "group/links",
@@ -45,6 +47,8 @@
         "custom/ml4w-welcome",
         // "custom/waybarthemes",
         "custom/exit",
+        "idle_inhibitor",
+        // "custom/hypridle", // custom/exit already locks
         "clock"
     ]
 }
